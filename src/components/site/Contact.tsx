@@ -3,14 +3,41 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Mail, Linkedin, Github, Phone } from "lucide-react";
 import { toast } from "sonner";
+import { useRef, useState } from "react";
+import emailjs from "emailjs-com";
 
 export const Contact = () => {
+  const form = useRef<HTMLFormElement | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-    toast.success(
-      "Message sent! Thanks for reaching out. I'll get back to you soon."
-    );
-    (e.currentTarget as HTMLFormElement).reset();
+
+    if (!form.current) return;
+
+    setIsSubmitting(true);
+
+    emailjs
+      .sendForm(
+        "service_17iv4zy",
+        "template_jwu58et",
+        form.current,
+        "zp8DRv1mcRNsGKHHR"
+      )
+      .then(
+        () => {
+          toast.success(
+            "✅ Message sent successfully! I'll get back to you soon."
+          );
+          form.current?.reset();
+          setIsSubmitting(false);
+        },
+        (error) => {
+          console.error(error);
+          toast.error("❌ Failed to send message. Please try again.");
+          setIsSubmitting(false);
+        }
+      );
   };
 
   return (
@@ -19,17 +46,21 @@ export const Contact = () => {
         Contact
       </h2>
       <div className="grid gap-6 md:grid-cols-2">
-        <form onSubmit={onSubmit} className="surface-card p-6 space-y-4">
+        <form
+          ref={form}
+          onSubmit={onSubmit}
+          className="surface-card p-6 space-y-4"
+        >
           <div className="grid gap-4 md:grid-cols-2">
             <Input
-              name="name"
+              name="from_name"
               placeholder="Name"
               required
               className="focus:ring-2 focus:ring-primary/50 focus:shadow-[0_0_15px_hsl(var(--primary)/0.3)] transition-all duration-300"
             />
             <Input
               type="email"
-              name="email"
+              name="from_email"
               placeholder="Email"
               required
               className="focus:ring-2 focus:ring-primary/50 focus:shadow-[0_0_15px_hsl(var(--primary)/0.3)] transition-all duration-300"
@@ -43,8 +74,14 @@ export const Contact = () => {
             className="focus:ring-2 focus:ring-primary/50 focus:shadow-[0_0_15px_hsl(var(--primary)/0.3)] transition-all duration-300"
           />
           <div>
-            <Button type="submit" className="relative overflow-hidden">
-              <span className="flex items-center gap-2">Send Message</span>
+            <Button
+              type="submit"
+              className="relative overflow-hidden"
+              disabled={isSubmitting}
+            >
+              <span className="flex items-center gap-2">
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </span>
             </Button>
           </div>
         </form>
