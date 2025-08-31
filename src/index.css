@@ -1,0 +1,406 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL. */
+
+@layer base {
+  :root {
+    /* Spider-Man inspired palette */
+    --brand-red: 353 81% 38%; /* #B11226 */
+    --brand-navy: 218 75% 15%; /* #0A1F44 */
+    --web-gray: 0 0% 90%; /* #E6E6E6 */
+
+    --background: 0 0% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 97%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: var(--brand-red);
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 210 40% 94%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 92%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 94%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: var(--brand-red);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: var(--brand-red);
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: var(--brand-red);
+
+    /* Light mode background gradient */
+    --background-gradient: radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      hsl(353 81% 96%) 0%,
+      hsl(0 0% 98%) 50%,
+      hsl(210 40% 97%) 100%
+    );
+    --surface-gradient: linear-gradient(
+      145deg,
+      hsl(0 0% 100%) 0%,
+      hsl(210 40% 98%) 50%,
+      hsl(0 0% 99%) 100%
+    );
+    --card-border: 214.3 31.8% 85%;
+    --skill-card: 210 40% 95%;
+    --skill-card-hover: 210 40% 93%;
+
+    /* Extras */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(var(--brand-red)) 0%,
+      hsl(353 81% 45%) 50%,
+      hsl(350 85% 40%) 100%
+    );
+    --shadow-glow-red: 0 0 40px hsl(var(--brand-red) / 0.35);
+    --shadow-elegant: 0 8px 32px hsl(var(--brand-red) / 0.12);
+    --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: var(--brand-navy);
+    --foreground: 0 0% 96%;
+
+    --card: 218 75% 20%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 218 75% 20%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: var(--brand-red);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 74.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: var(--brand-red);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: var(--brand-red);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: var(--brand-red);
+
+    /* Dark mode specific variables */
+    --card-border: 218 75% 25%;
+    --skill-card: 218 75% 22%;
+    --skill-card-hover: 218 75% 25%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-foreground font-sans antialiased;
+    background: var(--background-gradient);
+    min-height: 100vh;
+  }
+
+  .dark body {
+    background: hsl(var(--background));
+  }
+}
+
+/* Utility classes tied to design tokens */
+@layer components {
+  .btn-hero {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+    background-image: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+  }
+  .btn-hero:hover {
+    filter: brightness(1.08);
+    box-shadow: var(--shadow-glow-red);
+  }
+
+  .surface-card {
+    @apply rounded-xl backdrop-blur supports-[backdrop-filter]:bg-card/90;
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .skill-card {
+    background: hsl(var(--skill-card));
+    border: 1px solid hsl(var(--card-border));
+    transition: var(--transition-smooth);
+  }
+
+  .skill-card:hover {
+    background: hsl(var(--skill-card-hover));
+    border: 1px solid hsl(var(--primary) / 0.3);
+    box-shadow: var(--shadow-elegant);
+  }
+
+  /* Animated underline sweep for links */
+  .story-link {
+    position: relative;
+    display: inline-block;
+  }
+  .story-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    background: linear-gradient(90deg, hsl(var(--primary)), transparent);
+    transition: var(--transition-smooth);
+  }
+  .story-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+    box-shadow: 0 0 8px hsl(var(--primary) / 0.5);
+  }
+
+  /* Subtle hover glow utility */
+  .hover-glow {
+    transition: var(--transition-smooth);
+  }
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow-red);
+  }
+
+  /* 3D tilt card helpers */
+  .tilt-card {
+    will-change: transform;
+    transition: transform 150ms ease;
+    transform-style: preserve-3d;
+  }
+
+  /* Scroll reveal */
+  .reveal-section {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  .reveal-visible {
+    opacity: 1;
+    transform: none;
+    transition: var(--transition-smooth);
+  }
+
+  /* Section headers - simplified */
+}
+
+@layer components {
+  /* Cursor effects - all removed */
+
+  /* Hero subtle gradient lighting - removed */
+  .hero-light {
+    display: none;
+  }
+
+  /* Spider-Man Cursor Effects */
+  /* Cursor effects removed */
+
+  .web-strand {
+    position: absolute;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, white, transparent);
+    height: 2px;
+    opacity: 0;
+    z-index: 50;
+  }
+
+  .web-grab-effect {
+    position: fixed;
+    pointer-events: none;
+    z-index: 60;
+    opacity: 0;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.8) 0%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Enhanced Web Pattern Overlay */
+  @keyframes webMove {
+    from {
+      background-position: 0 0, 30px 30px;
+    }
+    to {
+      background-position: 60px 40px, 90px 70px;
+    }
+  }
+
+  @keyframes webReveal {
+    0% {
+      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      opacity: 1;
+    }
+  }
+
+  @keyframes swingIn {
+    0% {
+      transform: rotate(-15deg) translateY(-100px);
+      opacity: 0;
+    }
+    60% {
+      transform: rotate(5deg) translateY(-10px);
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(0deg) translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes gentleSwing {
+    0%,
+    100% {
+      transform: rotate(-1deg);
+    }
+    50% {
+      transform: rotate(1deg);
+    }
+  }
+
+  @keyframes webFill {
+    0% {
+      stroke-dashoffset: 283;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .web-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.25;
+    mix-blend-mode: overlay;
+    background-image: radial-gradient(
+        circle at 30px 30px,
+        hsl(var(--primary) / 0.4) 1px,
+        transparent 1px
+      ),
+      radial-gradient(
+        circle at 0 0,
+        hsl(var(--primary) / 0.3) 1px,
+        transparent 1px
+      );
+    background-size: 60px 60px, 60px 60px;
+    animation: webMove 30s linear infinite;
+    z-index: 2;
+  }
+
+  .hero-web-reveal {
+    animation: webReveal 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .swing-in {
+    animation: swingIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  .gentle-swing {
+    animation: gentleSwing 4s ease-in-out infinite;
+    transform-origin: top center;
+  }
+
+  .web-fill-animation {
+    stroke-dasharray: 283;
+    animation: webFill 2s ease-out forwards;
+  }
+
+  /* Button glow helper */
+  .btn-glow:hover {
+    box-shadow: var(--shadow-glow-red);
+  }
+
+  /* Swing on hover utility for cards */
+  .swing-hover {
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+  }
+  .swing-hover:hover {
+    transform: rotate(-1.2deg) translateY(-2px);
+  }
+
+  /* Web grab animation */
+  @keyframes webGrab {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(2);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  /* Accessibility: Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .swing-in,
+    .gentle-swing,
+    .web-fill-animation,
+    .hero-web-reveal {
+      animation: none !important;
+    }
+
+    .web-overlay {
+      animation: none !important;
+    }
+  }
+}
