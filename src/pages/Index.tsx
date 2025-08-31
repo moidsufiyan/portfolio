@@ -8,7 +8,6 @@ import { Experience } from "@/components/site/Experience";
 import { Education } from "@/components/site/Education";
 import { Achievements } from "@/components/site/Achievements";
 import { Certifications } from "@/components/site/Certifications";
-import { Quotes } from "@/components/site/Quotes";
 import { CTA } from "@/components/site/CTA";
 import { Contact } from "@/components/site/Contact";
 import { Button } from "@/components/ui/button";
@@ -29,17 +28,19 @@ const Index = () => {
         <Education />
         <Achievements />
         <Certifications />
-        <Quotes />
         <CTA />
         <Contact />
       </main>
       <footer className="border-t py-8 text-center">
         <div className="container flex flex-col items-center gap-4">
           <a href="/resume.pdf" download>
-            <Button variant="hero" size="sm">Download Resume</Button>
+            <Button variant="hero" size="sm">
+              Download Resume
+            </Button>
           </a>
           <p className="text-sm text-foreground/60">
-            © {new Date().getFullYear()} Mohammed Moid Sufiyan — Built with React & Tailwind.
+            © {new Date().getFullYear()} Mohammed Moid Sufiyan — Built with
+            React & Tailwind.
           </p>
         </div>
       </footer>

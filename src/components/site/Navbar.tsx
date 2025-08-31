@@ -11,7 +11,6 @@ const links = [
   { id: "experience", label: "Experience" },
   { id: "education", label: "Education" },
   { id: "achievements", label: "Achievements" },
-  { id: "quotes", label: "Quotes" },
   { id: "contact", label: "Contact" },
 ] as const;
 
@@ -44,6 +43,9 @@ export const Navbar = () => {
               }`}
             >
               {l.label}
+              {active === l.id && (
+                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
+              )}
             </button>
           ))}
         </div>
@@ -69,13 +71,16 @@ export const Navbar = () => {
                 <button
                   key={l.id}
                   onClick={() => handleScroll(l.id)}
-                  className={`text-left py-2 px-4 rounded-md transition-colors hover:bg-muted ${
+                  className={`text-left py-2 px-4 rounded-md transition-colors hover:bg-muted relative ${
                     active === l.id
                       ? "text-primary bg-muted"
                       : "text-foreground/70"
                   }`}
                 >
                   {l.label}
+                  {active === l.id && (
+                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full" />
+                  )}
                 </button>
               ))}
             </div>

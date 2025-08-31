@@ -71,7 +71,7 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Full-Stack Developer & Cybersecurity and Game Development Enthusiast
+            Full-Stack Developer & Cybersecurity and Game Designing Enthusiast
           </motion.p>
           <motion.p
             className="mt-4 max-w-xl text-foreground/70"
@@ -82,6 +82,17 @@ export const Hero = () => {
             Turning ideas into digital realities — from secure, scalable web
             apps to immersive game worlds.
           </motion.p>
+
+          <motion.div
+            className="mt-6 p-4 border-l-4 border-primary/30 bg-primary/5 rounded-r-lg"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+          >
+            <p className="text-lg font-medium text-primary/90 italic">
+              "With great power comes great responsibility — and great code."
+            </p>
+          </motion.div>
 
           <motion.div
             className="mt-8 flex flex-wrap gap-3"

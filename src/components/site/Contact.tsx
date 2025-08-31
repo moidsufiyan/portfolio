@@ -75,9 +75,6 @@ export const Contact = () => {
             >
               <Github className="opacity-80" /> github.com/moidsufiyan
             </a>
-            <div className="flex items-center gap-2">
-              <Phone className="opacity-80" /> +91-00000-00000
-            </div>
           </div>
         </div>
       </div>

@@ -8,11 +8,9 @@ const SECTION_IDS = [
   "experience",
   "education",
   "achievements",
-  "blog",
-  "quotes",
   "contact",
 ] as const;
-export type SectionId = typeof SECTION_IDS[number];
+export type SectionId = (typeof SECTION_IDS)[number];
 
 export function useActiveSection() {
   const [active, setActive] = useState<SectionId>("hero");
@@ -27,7 +25,7 @@ export function useActiveSection() {
           }
         });
       },
-      { rootMargin: "-40% 0px -55% 0px", threshold: 0.1 }
+      { rootMargin: "-20% 0px -60% 0px", threshold: 0.1 }
     );
 
     SECTION_IDS.forEach((id) => {
