@@ -18,20 +18,30 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <main>
+      <main className="space-y-0">
         <Hero />
+        <div className="section-divider" />
         <About />
+        <div className="section-divider" />
         <Skills />
+        <div className="section-divider" />
         <TechStack />
+        <div className="section-divider" />
         <Projects />
+        <div className="section-divider" />
         <Experience />
+        <div className="section-divider" />
         <Education />
+        <div className="section-divider" />
         <Achievements />
+        <div className="section-divider" />
         <Certifications />
+        <div className="section-divider" />
         <CTA />
+        <div className="section-divider" />
         <Contact />
       </main>
-      <footer className="border-t py-8 text-center">
+      <footer className="border-t py-8 text-center bg-muted/30">
         <div className="container flex flex-col items-center gap-4">
           <a href="/resume.pdf" download>
             <Button variant="hero" size="sm">

@@ -1,31 +1,39 @@
 export const About = () => (
-  <section id="about" className="container py-16 md:py-24">
-    <div className="surface-card p-6 md:p-10">
-      <h2 className="font-heading text-2xl font-bold md:text-3xl">About</h2>
-      <p className="mt-4 text-foreground/80">
-        I’m a passionate Computer Science undergraduate with a love for building
-        innovative solutions. While my primary focus is on web development and
-        software engineering, I also dive into cybersecurity challenges and game
-        designing experiments. Always learning, always coding.
-      </p>
-      <div className="mt-6 grid gap-4 md:grid-cols-3">
-        <div>
-          <h3 className="text-sm font-semibold text-foreground/80">
-            Education
-          </h3>
-          <p className="mt-2 text-sm">B.Tech CSE (2023–2027)</p>
-        </div>
-        <div>
-          <h3 className="text-sm font-semibold text-foreground/80">Hobbies</h3>
-          <p className="mt-2 text-sm">Gaming, exploring tech, Spidey fan</p>
-        </div>
-        <div>
-          <h3 className="text-sm font-semibold text-foreground/80">
-            Interests
-          </h3>
-          <p className="mt-2 text-sm">
-            Cybersecurity, Web Engineering, Game Dev
+    <section id="about" className="section-container">
+    <div className="container">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center section-header">
+          <h2 className="heading-secondary mb-4">About Me</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            I'm a passionate Computer Science undergraduate with a love for building
+            innovative solutions. While my primary focus is on web development and
+            software engineering, I also dive into cybersecurity challenges and game
+            designing experiments. Always learning, always coding.
           </p>
+        </div>
+        
+        <div className="grid gap-6 md:grid-cols-3 mt-12">
+          <div className="text-center p-6 bg-card border border-border rounded-lg">
+            <h3 className="text-lg font-semibold text-foreground mb-2">
+              Education
+            </h3>
+            <p className="text-muted-foreground">B.Tech CSE (2023–2027)</p>
+            <p className="text-sm text-muted-foreground/80 mt-1">Vardhaman College of Engineering</p>
+          </div>
+          <div className="text-center p-6 bg-card border border-border rounded-lg">
+            <h3 className="text-lg font-semibold text-foreground mb-2">Hobbies</h3>
+            <p className="text-muted-foreground">Gaming, exploring tech, Spidey fan</p>
+            <p className="text-sm text-muted-foreground/80 mt-1">Always curious, always creating</p>
+          </div>
+          <div className="text-center p-6 bg-card border border-border rounded-lg">
+            <h3 className="text-lg font-semibold text-foreground mb-2">
+              Interests
+            </h3>
+            <p className="text-muted-foreground">
+              Cybersecurity, Web Engineering, Game Dev
+            </p>
+            <p className="text-sm text-muted-foreground/80 mt-1">Multi-disciplinary approach</p>
+          </div>
         </div>
       </div>
     </div>

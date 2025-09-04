@@ -1,17 +1,17 @@
 import { Badge } from "@/components/ui/badge";
-import { Code, Server, Database, Shield, Wrench } from "lucide-react";
+import { Code, Server, Database, Shield, Wrench, LucideIcon } from "lucide-react";
 
 type SkillItem = { name: string; value: number };
 
-const SkillGroup = ({ title, Icon, items, extraClass }: { title: string; Icon: any; items: SkillItem[]; extraClass?: string }) => (
-  <div className={`surface-card p-6 border-2 border-border ${extraClass ?? ""}`}>
-    <div className="mb-4 flex items-center gap-2">
-      <Icon className="text-primary transition-transform duration-200 hover:scale-110" />
-      <h3 className="font-semibold">{title}</h3>
+const SkillGroup = ({ title, Icon, items, extraClass }: { title: string; Icon: LucideIcon; items: SkillItem[]; extraClass?: string }) => (
+  <div className={`project-card p-6 ${extraClass ?? ""}`}>
+    <div className="mb-4 flex items-center gap-3">
+      <Icon className="text-primary transition-transform duration-200 hover:scale-110" size={20} />
+      <h3 className="heading-tertiary">{title}</h3>
     </div>
-    <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+    <div className="grid grid-cols-2 gap-3 md:grid-cols-2">
       {items.map((s) => (
-        <div key={s.name} className="rounded-lg p-3 skill-card hover:scale-105">
+        <div key={s.name} className="rounded-md p-3 bg-muted/30 hover:bg-muted/50 transition-colors">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
             <p className="text-sm font-medium">{s.name}</p>
@@ -53,20 +53,28 @@ export const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="container py-16 md:py-24">
-      <h2 className="mb-8 font-heading text-2xl font-bold md:text-3xl swing-in">Skills</h2>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <SkillGroup title="Frontend" Icon={Code} items={frontend} />
-        <SkillGroup title="Backend" Icon={Server} items={backend} />
-        <SkillGroup title="Databases" Icon={Database} items={databases} />
-        <SkillGroup title="Security Tools" Icon={Shield} items={security} />
-        <SkillGroup title="Other Tools" Icon={Wrench} items={tools} />
-        <div className="surface-card p-6 border-2 border-border">
-          <h3 className="mb-4 font-semibold">Soft Skills</h3>
-          <div className="flex flex-wrap gap-2">
-            {["Problem-solving", "Teamwork", "Adaptability", "Communication"].map((s) => (
-              <Badge key={s} variant="secondary" className="transition-transform hover:scale-105 border border-border">{s}</Badge>
-            ))}
+    <section id="skills" className="section-container">
+      <div className="container">
+        <div className="section-header text-center">
+          <h2 className="heading-secondary mb-4">Technical Skills</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            A comprehensive overview of my technical expertise across various domains,
+            from frontend development to cybersecurity tools.
+          </p>
+        </div>
+        <div className="card-grid">
+          <SkillGroup title="Frontend" Icon={Code} items={frontend} />
+          <SkillGroup title="Backend" Icon={Server} items={backend} />
+          <SkillGroup title="Databases" Icon={Database} items={databases} />
+          <SkillGroup title="Security Tools" Icon={Shield} items={security} />
+          <SkillGroup title="Other Tools" Icon={Wrench} items={tools} />
+          <div className="project-card p-6">
+            <h3 className="mb-4 heading-tertiary">Soft Skills</h3>
+            <div className="flex flex-wrap gap-2">
+              {["Problem-solving", "Teamwork", "Adaptability", "Communication"].map((s) => (
+                <Badge key={s} variant="secondary" className="transition-transform hover:scale-105">{s}</Badge>
+              ))}
+            </div>
           </div>
         </div>
       </div>

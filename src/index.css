@@ -78,6 +78,28 @@ All colors MUST be HSL. */
     --shadow-glow-red: 0 0 40px hsl(var(--brand-red) / 0.35);
     --shadow-elegant: 0 8px 32px hsl(var(--brand-red) / 0.12);
     --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Design System Spacing */
+    --section-padding-y: 4rem; /* 64px */
+    --section-padding-y-lg: 6rem; /* 96px */
+    --section-gap: 3rem; /* 48px */
+    --section-gap-lg: 4rem; /* 64px */
+    --container-padding: 1rem; /* 16px */
+    --container-padding-lg: 2rem; /* 32px */
+    
+    /* Visual Hierarchy */
+    --heading-primary: 3rem; /* 48px */
+    --heading-secondary: 2.25rem; /* 36px */
+    --heading-tertiary: 1.5rem; /* 24px */
+    --text-large: 1.125rem; /* 18px */
+    --text-base: 1rem; /* 16px */
+    --text-small: 0.875rem; /* 14px */
+    
+    /* Card System */
+    --card-padding: 1.5rem; /* 24px */
+    --card-padding-lg: 2rem; /* 32px */
+    --card-gap: 1.5rem; /* 24px */
+    --card-gap-lg: 2rem; /* 32px */
   }
 
   .dark {
@@ -226,6 +248,66 @@ All colors MUST be HSL. */
   }
 
   /* Section headers - simplified */
+  
+  /* Design System Utilities */
+  .section-container {
+    @apply py-16 md:py-20 lg:py-24;
+    padding-top: var(--section-padding-y);
+    padding-bottom: var(--section-padding-y);
+  }
+  
+  .section-container-lg {
+    padding-top: var(--section-padding-y-lg);
+    padding-bottom: var(--section-padding-y-lg);
+  }
+  
+  .section-header {
+    @apply mb-8 md:mb-12 lg:mb-16;
+  }
+  
+  .section-divider {
+    @apply border-t border-border/50 my-12 md:my-16 lg:my-20;
+  }
+  
+  .content-grid {
+    @apply grid gap-6 md:gap-8 lg:gap-10;
+  }
+  
+  .card-grid {
+    @apply grid gap-6 md:grid-cols-2 lg:grid-cols-3;
+    gap: var(--card-gap);
+  }
+  
+  .card-grid-lg {
+    gap: var(--card-gap-lg);
+  }
+  
+  .project-card {
+    @apply bg-card border border-border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/20;
+  }
+  
+  .stats-grid {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6;
+  }
+  
+  .stat-card {
+    @apply text-center p-6 bg-card border border-border rounded-lg hover:border-primary/20 transition-colors;
+  }
+  
+  .heading-primary {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+    font-size: var(--heading-primary);
+  }
+  
+  .heading-secondary {
+    @apply text-2xl md:text-3xl font-bold;
+    font-size: var(--heading-secondary);
+  }
+  
+  .heading-tertiary {
+    @apply text-lg md:text-xl font-semibold;
+    font-size: var(--heading-tertiary);
+  }
 }
 
 @layer components {

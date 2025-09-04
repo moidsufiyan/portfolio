@@ -28,64 +28,74 @@ const projects = [
 
 export const TechStack = () => {
   return (
-    <section id="tech-stack" className="py-16 md:py-24">
+    <section id="tech-stack" className="section-container bg-muted/20">
       <div className="container">
-        <h2 className="mb-6 font-heading text-2xl font-bold md:text-3xl text-center">
-          Featured Projects & Experience
-        </h2>
-        <p className="text-center text-foreground/70 mb-12 max-w-2xl mx-auto">
-          Showcasing real-world applications and technical achievements
-        </p>
-
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <Card
-              key={project.name}
-              className="surface-card p-6 hover-glow group"
-            >
-              <div className="flex items-start justify-between mb-3">
-                <h3 className="font-heading text-xl font-bold text-primary">
-                  {project.name}
-                </h3>
-                <Badge variant="secondary" className="text-xs">
-                  {project.category}
-                </Badge>
-              </div>
-              <p className="text-sm text-foreground/80 mb-4 leading-relaxed">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-1">
-                {project.tech.map((tech) => (
-                  <Badge key={tech} variant="outline" className="text-xs">
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
-            </Card>
-          ))}
+        <div className="section-header text-center">
+          <h2 className="heading-secondary mb-4">Technical Journey</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            My technical expertise spans multiple domains, from web development to competitive programming.
+            Here's a glimpse into my development journey and achievements.
+          </p>
         </div>
 
         {/* Quick Stats */}
-        <div className="mt-12 grid gap-4 text-center md:grid-cols-4">
-          <div className="surface-card p-4">
-            <Code2 className="mx-auto mb-2 size-6 text-primary" />
-            <div className="font-heading text-2xl font-bold">15+</div>
-            <div className="text-sm text-foreground/70">Technologies</div>
+        <div className="stats-grid mb-16">
+          <div className="stat-card">
+            <Code2 className="mx-auto mb-3 size-8 text-primary" />
+            <div className="heading-tertiary font-bold text-primary mb-1">15+</div>
+            <div className="text-sm text-muted-foreground">Technologies</div>
+            <div className="text-xs text-muted-foreground mt-1">Mastered</div>
           </div>
-          <div className="surface-card p-4">
-            <Trophy className="mx-auto mb-2 size-6 text-primary" />
-            <div className="font-heading text-2xl font-bold">3+</div>
-            <div className="text-sm text-foreground/70">Major Projects</div>
+          <div className="stat-card">
+            <Trophy className="mx-auto mb-3 size-8 text-primary" />
+            <div className="heading-tertiary font-bold text-primary mb-1">3+</div>
+            <div className="text-sm text-muted-foreground">Major Projects</div>
+            <div className="text-xs text-muted-foreground mt-1">Deployed Live</div>
           </div>
-          <div className="surface-card p-4">
-            <Users className="mx-auto mb-2 size-6 text-primary" />
-            <div className="font-heading text-2xl font-bold">2</div>
-            <div className="text-sm text-foreground/70">Certifications</div>
+          <div className="stat-card">
+            <Users className="mx-auto mb-3 size-8 text-primary" />
+            <div className="heading-tertiary font-bold text-primary mb-1">2</div>
+            <div className="text-sm text-muted-foreground">Certifications</div>
+            <div className="text-xs text-muted-foreground mt-1">Earned</div>
           </div>
-          <div className="surface-card p-4">
-            <Target className="mx-auto mb-2 size-6 text-primary" />
-            <div className="font-heading text-2xl font-bold">2027</div>
-            <div className="text-sm text-foreground/70">Graduation</div>
+          <div className="stat-card">
+            <Target className="mx-auto mb-3 size-8 text-primary" />
+            <div className="heading-tertiary font-bold text-primary mb-1">2027</div>
+            <div className="text-sm text-muted-foreground">Graduation</div>
+            <div className="text-xs text-muted-foreground mt-1">Expected</div>
+          </div>
+        </div>
+
+        <div className="content-grid">
+          <h3 className="heading-tertiary text-center mb-8">Project Highlights</h3>
+          <div className="card-grid">
+            {projects.map((project, index) => (
+              <Card
+                key={project.name}
+                className="project-card group"
+              >
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-4">
+                    <h4 className="heading-tertiary text-primary">
+                      {project.name}
+                    </h4>
+                    <Badge variant="secondary" className="text-xs font-medium">
+                      {project.category}
+                    </Badge>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <Badge key={tech} variant="outline" className="text-xs">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
       </div>
