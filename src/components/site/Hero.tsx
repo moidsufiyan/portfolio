@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import profileImg from "@/assets/profile-mohammed.jpg";
+import profileImg from "@/assets/profile-new.jpg";
 import { SpiderWebBackground } from "./SpiderWebBackground";
 import { motion } from "framer-motion";
 import reactLogo from "@/assets/icons/react.svg";
@@ -119,7 +119,7 @@ export const Hero = () => {
         <div className="relative hidden md:block">
           <div className="pointer-events-none absolute inset-0">
             <motion.span
-              className="absolute left-8 top-10 h-10 w-px bg-white/30"
+              className="absolute left-8 top-10 h-10 w-px bg-foreground/20 dark:bg-white/30"
               initial={{ scaleY: 0 }}
               animate={{ scaleY: 1 }}
               transition={{ duration: 0.6, delay: 0.25 }}
@@ -139,7 +139,7 @@ export const Hero = () => {
             />
 
             <motion.span
-              className="absolute left-1/2 top-4 h-12 w-px bg-white/30"
+              className="absolute left-1/2 top-4 h-12 w-px bg-foreground/20 dark:bg-white/30"
               initial={{ scaleY: 0 }}
               animate={{ scaleY: 1 }}
               transition={{ duration: 0.6, delay: 0.35 }}
@@ -160,7 +160,7 @@ export const Hero = () => {
             />
 
             <motion.span
-              className="absolute right-8 top-8 h-12 w-px bg-white/30"
+              className="absolute right-8 top-8 h-12 w-px bg-foreground/20 dark:bg-white/30"
               initial={{ scaleY: 0 }}
               animate={{ scaleY: 1 }}
               transition={{ duration: 0.6, delay: 0.45 }}
