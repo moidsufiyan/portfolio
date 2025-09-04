@@ -4,6 +4,7 @@ import { About } from "@/components/site/About";
 import { Skills } from "@/components/site/Skills";
 import { TechStack } from "@/components/site/TechStack";
 import { Projects } from "@/components/site/Projects";
+import { DevelopmentProcess } from "@/components/site/DevelopmentProcess";
 import { Experience } from "@/components/site/Experience";
 import { Education } from "@/components/site/Education";
 import { Achievements } from "@/components/site/Achievements";
@@ -28,6 +29,8 @@ const Index = () => {
         <TechStack />
         <div className="section-divider" />
         <Projects />
+        <div className="section-divider" />
+        <DevelopmentProcess />
         <div className="section-divider" />
         <Experience />
         <div className="section-divider" />
