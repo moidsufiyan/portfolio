@@ -1,4 +1,4 @@
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Trophy, Code2, Users, Target } from "lucide-react";
 
@@ -28,74 +28,98 @@ const projects = [
 
 export const TechStack = () => {
   return (
-    <section id="tech-stack" className="section-container bg-muted/20">
+    <section id="tech-stack" className="section-container">
       <div className="container">
-        <div className="section-header text-center">
-          <h2 className="heading-secondary mb-4">Technical Journey</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+        <div className="section-header">
+          <h2 className="heading-secondary mb-6">Technical Journey</h2>
+          <p className="text-large text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             My technical expertise spans multiple domains, from web development to competitive programming.
-            Here's a glimpse into my development journey and achievements.
+            Here's a comprehensive look at my development journey, achievements, and the technologies I've mastered.
           </p>
         </div>
 
-        {/* Quick Stats */}
-        <div className="stats-grid mb-16">
-          <div className="stat-card">
-            <Code2 className="mx-auto mb-3 size-8 text-primary" />
-            <div className="heading-tertiary font-bold text-primary mb-1">15+</div>
-            <div className="text-sm text-muted-foreground">Technologies</div>
-            <div className="text-xs text-muted-foreground mt-1">Mastered</div>
+        {/* Contextual Statistics Section */}
+        <div className="stats-section">
+          <div className="stats-highlight">
+            <h3>Development Achievements</h3>
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Over 2 years of dedicated learning and building, these numbers represent my technical growth and real-world impact.
+            </p>
           </div>
-          <div className="stat-card">
-            <Trophy className="mx-auto mb-3 size-8 text-primary" />
-            <div className="heading-tertiary font-bold text-primary mb-1">3+</div>
-            <div className="text-sm text-muted-foreground">Major Projects</div>
-            <div className="text-xs text-muted-foreground mt-1">Deployed Live</div>
-          </div>
-          <div className="stat-card">
-            <Users className="mx-auto mb-3 size-8 text-primary" />
-            <div className="heading-tertiary font-bold text-primary mb-1">2</div>
-            <div className="text-sm text-muted-foreground">Certifications</div>
-            <div className="text-xs text-muted-foreground mt-1">Earned</div>
-          </div>
-          <div className="stat-card">
-            <Target className="mx-auto mb-3 size-8 text-primary" />
-            <div className="heading-tertiary font-bold text-primary mb-1">2027</div>
-            <div className="text-sm text-muted-foreground">Graduation</div>
-            <div className="text-xs text-muted-foreground mt-1">Expected</div>
+          
+          <div className="stats-grid">
+            <div className="stat-card">
+              <Code2 className="mx-auto mb-4 size-10 text-primary" />
+              <div className="text-3xl font-bold text-primary mb-2">15+</div>
+              <div className="font-semibold text-foreground mb-1">Technologies</div>
+              <div className="text-sm text-muted-foreground">Frontend, Backend, DevOps & Security</div>
+            </div>
+            <div className="stat-card">
+              <Trophy className="mx-auto mb-4 size-10 text-primary" />
+              <div className="text-3xl font-bold text-primary mb-2">5+</div>
+              <div className="font-semibold text-foreground mb-1">Major Projects</div>
+              <div className="text-sm text-muted-foreground">Live applications with real users</div>
+            </div>
+            <div className="stat-card">
+              <Users className="mx-auto mb-4 size-10 text-primary" />
+              <div className="text-3xl font-bold text-primary mb-2">700+</div>
+              <div className="font-semibold text-foreground mb-1">Users Reached</div>
+              <div className="text-sm text-muted-foreground">Across WollyWay & Elevate X</div>
+            </div>
+            <div className="stat-card">
+              <Target className="mx-auto mb-4 size-10 text-primary" />
+              <div className="text-3xl font-bold text-primary mb-2">3</div>
+              <div className="font-semibold text-foreground mb-1">Core Domains</div>
+              <div className="text-sm text-muted-foreground">Web Dev, Security & Game Design</div>
+            </div>
           </div>
         </div>
 
+        <div className="visual-separator"></div>
+
         <div className="content-grid">
-          <h3 className="heading-tertiary text-center mb-8">Project Highlights</h3>
-          <div className="card-grid">
-            {projects.map((project, index) => (
-              <Card
-                key={project.name}
-                className="project-card group"
-              >
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-4">
-                    <h4 className="heading-tertiary text-primary">
-                      {project.name}
-                    </h4>
-                    <Badge variant="secondary" className="text-xs font-medium">
-                      {project.category}
-                    </Badge>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <Badge key={tech} variant="outline" className="text-xs">
-                        {tech}
+          <div className="section-header">
+            <h3 className="heading-tertiary mb-6">Featured Projects</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Each project represents a significant milestone in my technical journey, showcasing different 
+              aspects of my skills and problem-solving approach.
+            </p>
+          </div>
+          
+          <div className="project-showcase">
+            <div className="card-grid">
+              {projects.map((project, index) => (
+                <Card
+                  key={project.name}
+                  className="achievement-card group"
+                >
+                  <CardContent className="pt-6">
+                    <div className="project-meta">
+                      <span className="emphasis-accent">{project.category}</span>
+                      <span>Featured</span>
+                    </div>
+                    <div className="flex items-start justify-between mb-4">
+                      <h4 className="heading-tertiary emphasis-primary">
+                        {project.name}
+                      </h4>
+                      <Badge variant="secondary" className="text-xs font-medium">
+                        {project.category}
                       </Badge>
-                    ))}
-                  </div>
-                </div>
-              </Card>
-            ))}
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="project-tags">
+                      {project.tech.map((tech) => (
+                        <Badge key={tech} variant="outline" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </div>

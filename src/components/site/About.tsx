@@ -44,13 +44,13 @@ export const About = () => (
         </div>
         
         {/* Key Highlights */}
-        <div className="grid gap-6 md:grid-cols-3 mt-16">
-          <Card className="text-center hover:shadow-md transition-shadow">
+        <div className="card-grid mt-16">
+          <Card className="info-card text-center">
             <CardContent className="pt-6">
               <div className="flex justify-center mb-4">
                 <GraduationCap className="text-blue-600" size={32} />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Education</h3>
+              <h3 className="heading-tertiary font-semibold text-foreground mb-2">Education</h3>
               <p className="text-muted-foreground font-medium">B.Tech CSE (2023–2027)</p>
               <p className="text-sm text-muted-foreground/80 mt-1">Vardhaman College of Engineering</p>
               <div className="mt-3 flex justify-center">
@@ -59,12 +59,12 @@ export const About = () => (
             </CardContent>
           </Card>
 
-          <Card className="text-center hover:shadow-md transition-shadow">
+          <Card className="info-card text-center">
             <CardContent className="pt-6">
               <div className="flex justify-center mb-4">
                 <Shield className="text-green-600" size={32} />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Expertise</h3>
+              <h3 className="heading-tertiary font-semibold text-foreground mb-2">Expertise</h3>
               <p className="text-muted-foreground">Full-Stack Development</p>
               <p className="text-muted-foreground">Cybersecurity & Ethical Hacking</p>
               <p className="text-muted-foreground">AI/ML Applications</p>
@@ -75,12 +75,12 @@ export const About = () => (
             </CardContent>
           </Card>
 
-          <Card className="text-center hover:shadow-md transition-shadow">
+          <Card className="info-card text-center">
             <CardContent className="pt-6">
               <div className="flex justify-center mb-4">
                 <Gamepad2 className="text-purple-600" size={32} />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Interests</h3>
+              <h3 className="heading-tertiary font-semibold text-foreground mb-2">Interests</h3>
               <p className="text-muted-foreground">Game Development Physics</p>
               <p className="text-muted-foreground">Spider-Man Tech Analysis</p>
               <p className="text-muted-foreground">Competitive Programming</p>
@@ -91,11 +91,18 @@ export const About = () => (
           </Card>
         </div>
 
+        <div className="visual-separator"></div>
+
         {/* Core Values */}
         <div className="mt-16">
-          <h3 className="heading-tertiary text-center mb-8">What Drives Me</h3>
-          <div className="grid gap-6 md:grid-cols-2">
-            <Card className="hover:shadow-md transition-shadow">
+          <div className="section-header">
+            <h3 className="heading-tertiary mb-6">What Drives Me</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              The principles and values that guide my approach to development and problem-solving.
+            </p>
+          </div>
+          <div className="card-grid-2">
+            <Card className="achievement-card">
               <CardContent className="pt-6">
                 <div className="flex items-center gap-3 mb-4">
                   <Target className="text-primary" size={24} />
@@ -108,7 +115,7 @@ export const About = () => (
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-md transition-shadow">
+            <Card className="achievement-card">
               <CardContent className="pt-6">
                 <div className="flex items-center gap-3 mb-4">
                   <Zap className="text-primary" size={24} />
@@ -124,24 +131,33 @@ export const About = () => (
         </div>
 
         {/* Quick Stats */}
-        <div className="mt-16 text-center">
-          <h3 className="heading-tertiary mb-8">Quick Overview</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="p-4">
-              <div className="text-2xl font-bold text-primary mb-1">2+</div>
-              <div className="text-sm text-muted-foreground">Years Coding</div>
+        <div className="stats-section">
+          <div className="stats-highlight">
+            <h3>Development Journey</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Key milestones and achievements that define my technical growth and impact.
+            </p>
+          </div>
+          <div className="stats-grid">
+            <div className="stat-card">
+              <div className="text-3xl font-bold text-primary mb-2">2+</div>
+              <div className="font-semibold text-foreground mb-1">Years Coding</div>
+              <div className="text-sm text-muted-foreground">Continuous learning</div>
             </div>
-            <div className="p-4">
-              <div className="text-2xl font-bold text-primary mb-1">5+</div>
-              <div className="text-sm text-muted-foreground">Major Projects</div>
+            <div className="stat-card">
+              <div className="text-3xl font-bold text-primary mb-2">5+</div>
+              <div className="font-semibold text-foreground mb-1">Major Projects</div>
+              <div className="text-sm text-muted-foreground">Live applications</div>
             </div>
-            <div className="p-4">
-              <div className="text-2xl font-bold text-primary mb-1">15+</div>
-              <div className="text-sm text-muted-foreground">Technologies</div>
+            <div className="stat-card">
+              <div className="text-3xl font-bold text-primary mb-2">15+</div>
+              <div className="font-semibold text-foreground mb-1">Technologies</div>
+              <div className="text-sm text-muted-foreground">Across domains</div>
             </div>
-            <div className="p-4">
-              <div className="text-2xl font-bold text-primary mb-1">3</div>
-              <div className="text-sm text-muted-foreground">Core Domains</div>
+            <div className="stat-card">
+              <div className="text-3xl font-bold text-primary mb-2">3</div>
+              <div className="font-semibold text-foreground mb-1">Core Domains</div>
+              <div className="text-sm text-muted-foreground">Web, Security, Games</div>
             </div>
           </div>
         </div>

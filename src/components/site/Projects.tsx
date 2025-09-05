@@ -415,42 +415,67 @@ const ProjectCard = ({ project }: { project: ProjectData }) => {
 export const Projects = () => (
   <section id="projects" className="section-container">
     <div className="container">
-      <div className="section-header text-center">
-        <h2 className="heading-secondary mb-4">Project Case Studies</h2>
-        <p className="text-muted-foreground max-w-3xl mx-auto">
+      <div className="section-header">
+        <h2 className="heading-secondary mb-6">Featured Project Case Studies</h2>
+        <p className="text-large text-muted-foreground max-w-4xl mx-auto leading-relaxed">
           Comprehensive showcases of my development journey, featuring detailed technical implementations, 
           challenges overcome, and measurable outcomes. Each project tells a complete story from conception to deployment.
         </p>
       </div>
       
-      {/* Project Stats Overview */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-        <div className="text-center p-4 bg-card border border-border rounded-lg">
-          <TrendingUp className="mx-auto mb-2 size-6 text-primary" />
-          <div className="font-bold text-lg">700+</div>
-          <div className="text-xs text-muted-foreground">Total Users Reached</div>
+      {/* Project Impact Statistics */}
+      <div className="stats-section">
+        <div className="stats-highlight">
+          <h3>Project Impact & Reach</h3>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Real-world metrics demonstrating the impact and success of my development projects across different domains.
+          </p>
         </div>
-        <div className="text-center p-4 bg-card border border-border rounded-lg">
-          <Code className="mx-auto mb-2 size-6 text-primary" />
-          <div className="font-bold text-lg">10,000+</div>
-          <div className="text-xs text-muted-foreground">Lines of Code</div>
-        </div>
-        <div className="text-center p-4 bg-card border border-border rounded-lg">
-          <Github className="mx-auto mb-2 size-6 text-primary" />
-          <div className="font-bold text-lg">3</div>
-          <div className="text-xs text-muted-foreground">Open Source Projects</div>
-        </div>
-        <div className="text-center p-4 bg-card border border-border rounded-lg">
-          <Target className="mx-auto mb-2 size-6 text-primary" />
-          <div className="font-bold text-lg">99%</div>
-          <div className="text-xs text-muted-foreground">Project Success Rate</div>
+        
+        <div className="stats-grid">
+          <div className="stat-card">
+            <TrendingUp className="mx-auto mb-4 size-10 text-primary" />
+            <div className="text-3xl font-bold text-primary mb-2">700+</div>
+            <div className="font-semibold text-foreground mb-1">Users Reached</div>
+            <div className="text-sm text-muted-foreground">Across all platforms</div>
+          </div>
+          <div className="stat-card">
+            <Code className="mx-auto mb-4 size-10 text-primary" />
+            <div className="text-3xl font-bold text-primary mb-2">10K+</div>
+            <div className="font-semibold text-foreground mb-1">Lines of Code</div>
+            <div className="text-sm text-muted-foreground">Clean, maintainable solutions</div>
+          </div>
+          <div className="stat-card">
+            <Github className="mx-auto mb-4 size-10 text-primary" />
+            <div className="text-3xl font-bold text-primary mb-2">3</div>
+            <div className="font-semibold text-foreground mb-1">Live Applications</div>
+            <div className="text-sm text-muted-foreground">Production deployments</div>
+          </div>
+          <div className="stat-card">
+            <Target className="mx-auto mb-4 size-10 text-primary" />
+            <div className="text-3xl font-bold text-primary mb-2">99%</div>
+            <div className="font-semibold text-foreground mb-1">Success Rate</div>
+            <div className="text-sm text-muted-foreground">On-time delivery record</div>
+          </div>
         </div>
       </div>
 
-      <div className="card-grid">
-        {projectsData.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
+      <div className="visual-separator"></div>
+
+      <div className="project-showcase">
+        <div className="section-header">
+          <h3 className="heading-tertiary mb-6">Detailed Project Portfolio</h3>
+          <p className="text-muted-foreground max-w-3xl mx-auto">
+            Explore comprehensive case studies with technical deep-dives, challenges faced, solutions implemented, 
+            and key learnings from each project.
+          </p>
+        </div>
+        
+        <div className="card-grid">
+          {projectsData.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
       </div>
     </div>
   </section>
