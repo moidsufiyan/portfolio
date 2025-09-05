@@ -790,6 +790,62 @@ All colors MUST be HSL. */
     animation: webReveal 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
+  /* Enhanced navbar animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInFromTop {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Smooth section transitions */
+  .section-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Enhanced active indicators */
+  .nav-indicator {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nav-indicator::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: hsl(var(--primary));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
+    border-radius: 1px;
+  }
+
+  .nav-indicator.active::before {
+    width: 100%;
+  }
+
+  .nav-indicator:hover::before {
+    width: 100%;
+    background: hsl(var(--primary) / 0.5);
+  }
+
   .swing-in {
     animation: swingIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
   }

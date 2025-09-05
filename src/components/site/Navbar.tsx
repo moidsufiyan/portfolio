@@ -15,7 +15,7 @@ const links = [
 ] as const;
 
 export const Navbar = () => {
-  const { active } = useActiveSection();
+  const { active, isTransitioning } = useActiveSection();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleScroll = useCallback((id: string) => {
@@ -38,14 +38,22 @@ export const Navbar = () => {
             <button
               key={l.id}
               onClick={() => handleScroll(l.id)}
-              className={`story-link relative text-sm transition-colors hover:text-primary ${
-                active === l.id ? "text-primary" : "text-foreground/70"
-              }`}
+              className={`story-link relative text-sm transition-all duration-300 hover:text-primary hover:scale-105 ${
+                active === l.id
+                  ? "text-primary font-medium"
+                  : "text-foreground/70"
+              } ${isTransitioning && active === l.id ? "animate-pulse" : ""}`}
             >
               {l.label}
-              {active === l.id && (
-                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
-              )}
+              <div
+                className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full transition-all duration-300 ease-out ${
+                  active === l.id
+                    ? "opacity-100 scale-x-100"
+                    : "opacity-0 scale-x-0"
+                }`}
+              />
+              {/* Hover indicator */}
+              <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary/30 rounded-full transition-all duration-200 scale-x-0 hover:scale-x-100" />
             </button>
           ))}
         </div>
@@ -64,23 +72,37 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t bg-background/95 backdrop-blur">
+        <div className="md:hidden border-t bg-background/95 backdrop-blur animate-in slide-in-from-top-2 duration-200">
           <nav className="container py-4">
             <div className="flex flex-col gap-4">
-              {links.map((l) => (
+              {links.map((l, index) => (
                 <button
                   key={l.id}
                   onClick={() => handleScroll(l.id)}
-                  className={`text-left py-2 px-4 rounded-md transition-colors hover:bg-muted relative ${
+                  className={`text-left py-3 px-4 rounded-lg transition-all duration-300 hover:bg-muted hover:scale-[1.02] relative overflow-hidden ${
                     active === l.id
-                      ? "text-primary bg-muted"
+                      ? "text-primary bg-muted font-medium shadow-sm"
                       : "text-foreground/70"
+                  } ${
+                    isTransitioning && active === l.id ? "animate-pulse" : ""
                   }`}
+                  style={{
+                    animationDelay: `${index * 50}ms`,
+                    animation: isMobileMenuOpen
+                      ? `fadeInUp 0.3s ease-out ${index * 50}ms both`
+                      : "",
+                  }}
                 >
                   {l.label}
-                  {active === l.id && (
-                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full" />
-                  )}
+                  <div
+                    className={`absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full transition-all duration-300 ease-out ${
+                      active === l.id
+                        ? "opacity-100 scale-y-100"
+                        : "opacity-0 scale-y-0"
+                    }`}
+                  />
+                  {/* Mobile hover indicator */}
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary/30 rounded-r-full transition-all duration-200 scale-y-0 hover:scale-y-100" />
                 </button>
               ))}
             </div>
