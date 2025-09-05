@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export const SpiderWebBackground: React.FC = () => {
+  const { theme } = useTheme();
   const rootRef = useRef<HTMLDivElement>(null);
   const webTLRef = useRef<SVGSVGElement>(null);
   const webBRRef = useRef<SVGSVGElement>(null);
@@ -48,14 +50,19 @@ export const SpiderWebBackground: React.FC = () => {
       className="pointer-events-none absolute inset-0 overflow-hidden"
       style={{ zIndex: 1 }}
     >
-      {/* Corner webs with parallax */}
+      {/* Corner webs with parallax - theme-aware colors */}
       <svg
         ref={webTLRef}
-        className="absolute -top-24 -left-24 w-[480px] h-[480px] opacity-[0.35] text-primary/60 will-change-transform"
+        className={`absolute -top-24 -left-24 w-[480px] h-[480px] opacity-[0.35] will-change-transform ${
+          theme === "spiderman" ? "text-primary/60" : "text-muted-foreground/30"
+        }`}
         viewBox="0 0 100 100"
         fill="none"
       >
-        <g stroke="currentColor" strokeWidth="0.8">
+        <g
+          stroke="currentColor"
+          strokeWidth={theme === "spiderman" ? "0.8" : "0.5"}
+        >
           {Array.from({ length: 8 }).map((_, i) => (
             <circle key={i} cx="0" cy="0" r={(i + 1) * 10} />
           ))}
@@ -73,11 +80,16 @@ export const SpiderWebBackground: React.FC = () => {
 
       <svg
         ref={webBRRef}
-        className="absolute -bottom-24 -right-24 w-[520px] h-[520px] opacity-[0.35] text-primary/60 will-change-transform"
+        className={`absolute -bottom-24 -right-24 w-[520px] h-[520px] opacity-[0.35] will-change-transform ${
+          theme === "spiderman" ? "text-primary/60" : "text-muted-foreground/30"
+        }`}
         viewBox="0 0 100 100"
         fill="none"
       >
-        <g stroke="currentColor" strokeWidth="0.8">
+        <g
+          stroke="currentColor"
+          strokeWidth={theme === "spiderman" ? "0.8" : "0.5"}
+        >
           {Array.from({ length: 8 }).map((_, i) => (
             <circle key={i} cx="100" cy="100" r={(i + 1) * 10} />
           ))}
@@ -93,21 +105,25 @@ export const SpiderWebBackground: React.FC = () => {
         </g>
       </svg>
 
-      {/* Particles layer with subtle parallax */}
+      {/* Particles layer with subtle parallax - theme-aware colors */}
       <div
         ref={particlesRef}
         className="absolute inset-0 will-change-transform"
       >
-        {Array.from({ length: 24 }).map((_, i) => (
+        {Array.from({ length: theme === "spiderman" ? 24 : 16 }).map((_, i) => (
           <span
             key={i}
-            className="absolute block size-1.5 rounded-full bg-primary/60"
+            className={`absolute block rounded-full ${
+              theme === "spiderman"
+                ? "size-1.5 bg-primary/60"
+                : "size-1 bg-muted-foreground/20"
+            }`}
             style={{
               top: `${(i * 37) % 100}%`,
               left: `${(i * 53) % 100}%`,
-              animation: `float-${i % 4} 8s ease-in-out ${(i * 0.6).toFixed(
-                2
-              )}s infinite` as any,
+              animation: `float-${i % 4} ${
+                theme === "spiderman" ? "8s" : "12s"
+              } ease-in-out ${(i * 0.6).toFixed(2)}s infinite` as any,
             }}
           />
         ))}

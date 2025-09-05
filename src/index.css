@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,78 +9,94 @@ All colors MUST be HSL. */
 
 @layer base {
   :root {
-    /* Spider-Man inspired palette */
-    --brand-red: 353 81% 38%; /* #B11226 */
-    --brand-navy: 218 75% 15%; /* #0A1F44 */
-    --web-gray: 0 0% 90%; /* #E6E6E6 */
+    /* Professional Theme (Default) - Red-Centric Sophisticated Design */
+    --professional-background: 0 0% 98%; /* #FAFAFA */
+    --professional-surface: 0 0% 100%; /* #FFFFFF */
+    --professional-text-primary: 0 0% 12%; /* #1E1E1E */
+    --professional-text-secondary: 0 0% 29%; /* #4B4B4B */
+    --professional-primary: 0 100% 27%; /* #8B0000 Deep Crimson Red */
+    --professional-secondary: 358 58% 42%; /* #A62C2B Muted Maroon */
+    --professional-accent: 0 72% 51%; /* #DC2626 Scarlet Red */
+    --professional-border: 220 13% 91%; /* #E5E7EB */
+    --professional-shadow: 0 0% 0%; /* rgba(0,0,0,0.08) */
+    --professional-hover: 0 100% 27%; /* rgba(139,0,0,0.1) */
 
-    --background: 0 0% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --background: var(--professional-background);
+    --foreground: var(--professional-text-primary);
 
-    --card: 0 0% 97%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: var(--professional-surface);
+    --card-foreground: var(--professional-text-primary);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: var(--professional-surface);
+    --popover-foreground: var(--professional-text-primary);
 
-    --primary: var(--brand-red);
-    --primary-foreground: 0 0% 98%;
+    --primary: var(--professional-primary);
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 94%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: var(--professional-border);
+    --secondary-foreground: var(--professional-text-primary);
 
-    --muted: 210 40% 92%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: var(--professional-border);
+    --muted-foreground: var(--professional-text-secondary);
 
-    --accent: 210 40% 94%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: var(--professional-accent);
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 72% 50%;
+    --destructive: 0 66% 42%; /* #B91C1C Error */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: var(--brand-red);
+    --border: var(--professional-border);
+    --input: var(--professional-border);
+    --ring: var(--professional-primary);
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: var(--brand-red);
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: var(--brand-red);
+    --sidebar-background: var(--professional-background);
+    --sidebar-foreground: var(--professional-text-secondary);
+    --sidebar-primary: var(--professional-primary);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: var(--professional-border);
+    --sidebar-accent-foreground: var(--professional-text-primary);
+    --sidebar-border: var(--professional-border);
+    --sidebar-ring: var(--professional-primary);
 
-    /* Light mode background gradient */
-    --background-gradient: radial-gradient(
-      ellipse 80% 50% at 50% -20%,
-      hsl(353 81% 96%) 0%,
-      hsl(0 0% 98%) 50%,
-      hsl(210 40% 97%) 100%
+    /* Professional theme background - clean and minimal */
+    --background-gradient: linear-gradient(
+      135deg,
+      hsl(var(--professional-background)) 0%,
+      hsl(220 14% 96%) 100%
     );
     --surface-gradient: linear-gradient(
       145deg,
-      hsl(0 0% 100%) 0%,
-      hsl(210 40% 98%) 50%,
-      hsl(0 0% 99%) 100%
+      hsl(var(--professional-surface)) 0%,
+      hsl(220 14% 99%) 100%
     );
-    --card-border: 214.3 31.8% 85%;
-    --skill-card: 210 40% 95%;
-    --skill-card-hover: 210 40% 93%;
+    --card-border: var(--professional-border);
+    --skill-card: var(--professional-surface);
+    --skill-card-hover: 220 14% 97%;
 
-    /* Extras */
+    /* Professional theme extras */
     --gradient-primary: linear-gradient(
       135deg,
-      hsl(var(--brand-red)) 0%,
-      hsl(353 81% 45%) 50%,
-      hsl(350 85% 40%) 100%
+      hsl(var(--professional-primary)) 0%,
+      hsl(var(--professional-secondary)) 50%,
+      hsl(var(--professional-accent)) 100%
     );
-    --shadow-glow-red: 0 0 40px hsl(var(--brand-red) / 0.35);
-    --shadow-elegant: 0 8px 32px hsl(var(--brand-red) / 0.12);
-    --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    
+    --shadow-glow: 0 0 20px hsl(var(--professional-primary) / 0.15);
+    --shadow-elegant: 0 8px 25px hsl(var(--professional-shadow) / 0.08);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Professional theme interaction colors */
+    --success: 158 64% 52%; /* #059669 */
+    --success-foreground: 0 0% 100%;
+    --warning: 32 95% 44%; /* #D97706 */
+    --warning-foreground: 0 0% 100%;
+    --hover-overlay: var(--professional-hover);
+
+    /* Professional theme specific animations - minimal and clean */
+    --animation-fade-in: fadeIn 0.6s ease-out;
+    --animation-slide-up: slideUp 0.8s ease-out;
+
     /* Design System Spacing - Enhanced */
     --section-padding-y: 5rem; /* 80px */
     --section-padding-y-lg: 6rem; /* 96px */
@@ -86,7 +104,7 @@ All colors MUST be HSL. */
     --section-gap-lg: 4rem; /* 64px */
     --container-padding: 1rem; /* 16px */
     --container-padding-lg: 2rem; /* 32px */
-    
+
     /* Visual Hierarchy - Enhanced */
     --heading-primary: 3.5rem; /* 56px */
     --heading-secondary: 2.5rem; /* 40px */
@@ -94,7 +112,7 @@ All colors MUST be HSL. */
     --text-large: 1.25rem; /* 20px */
     --text-base: 1rem; /* 16px */
     --text-small: 0.875rem; /* 14px */
-    
+
     /* Card System - Enhanced */
     --card-padding: 1.5rem; /* 24px */
     --card-padding-lg: 2rem; /* 32px */
@@ -102,20 +120,27 @@ All colors MUST be HSL. */
     --card-gap-lg: 2rem; /* 32px */
     --card-radius: 0.75rem; /* 12px */
     --card-radius-lg: 1rem; /* 16px */
-    
+
     /* Visual Separations */
     --divider-thickness: 1px;
     --divider-margin: 4rem; /* 64px */
     --divider-margin-lg: 5rem; /* 80px */
-    
+
     /* Content Spacing */
     --content-max-width: 1200px;
     --content-gap: 2rem; /* 32px */
     --content-gap-lg: 2.5rem; /* 40px */
   }
 
-  .dark {
-    --background: var(--brand-navy);
+  /* Spider-Man Theme (Alternative) - Fun and Dynamic */
+  [data-theme="spiderman"] {
+    /* Spider-Man inspired palette */
+    --spiderman-red: 353 81% 38%; /* #B11226 */
+    --spiderman-navy: 218 75% 15%; /* #0A1F44 */
+    --spiderman-blue: 221 39% 11%; /* #1A202C */
+    --spiderman-gray: 0 0% 90%; /* #E6E6E6 */
+
+    --background: var(--spiderman-navy);
     --foreground: 0 0% 96%;
 
     --card: 218 75% 20%;
@@ -124,7 +149,7 @@ All colors MUST be HSL. */
     --popover: 218 75% 20%;
     --popover-foreground: 0 0% 96%;
 
-    --primary: var(--brand-red);
+    --primary: var(--spiderman-red);
     --primary-foreground: 0 0% 100%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -141,21 +166,45 @@ All colors MUST be HSL. */
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: var(--brand-red);
+    --ring: var(--spiderman-red);
 
-    --sidebar-background: 240 5.9% 10%;
+    --sidebar-background: var(--spiderman-blue);
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: var(--brand-red);
+    --sidebar-primary: var(--spiderman-red);
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: var(--brand-red);
+    --sidebar-ring: var(--spiderman-red);
 
-    /* Dark mode specific variables */
+    /* Spider-Man theme background */
+    --background-gradient: radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      hsl(var(--spiderman-red) / 0.1) 0%,
+      hsl(var(--spiderman-navy)) 50%,
+      hsl(var(--spiderman-blue)) 100%
+    );
+    --surface-gradient: linear-gradient(
+      145deg,
+      hsl(218 75% 20%) 0%,
+      hsl(218 75% 18%) 50%,
+      hsl(218 75% 22%) 100%
+    );
+
+    /* Spider-Man theme specific variables */
     --card-border: 218 75% 25%;
     --skill-card: 218 75% 22%;
     --skill-card-hover: 218 75% 25%;
+
+    /* Spider-Man theme extras */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(var(--spiderman-red)) 0%,
+      hsl(353 81% 45%) 50%,
+      hsl(350 85% 40%) 100%
+    );
+    --shadow-glow: 0 0 40px hsl(var(--spiderman-red) / 0.35);
+    --shadow-elegant: 0 8px 32px hsl(var(--spiderman-red) / 0.12);
   }
 }
 
@@ -169,12 +218,21 @@ All colors MUST be HSL. */
   }
 
   body {
-    @apply text-foreground font-sans antialiased;
+    @apply text-foreground antialiased;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "Roboto", sans-serif;
     background: var(--background-gradient);
     min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  .dark body {
+  /* Professional theme uses gradient background */
+  :root body {
+    background: var(--background-gradient);
+  }
+
+  /* Spider-Man theme uses solid background */
+  [data-theme="spiderman"] body {
     background: hsl(var(--background));
   }
 }
@@ -188,7 +246,8 @@ All colors MUST be HSL. */
   }
   .btn-hero:hover {
     filter: brightness(1.08);
-    box-shadow: var(--shadow-glow-red);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-1px);
   }
 
   .surface-card {
@@ -208,6 +267,17 @@ All colors MUST be HSL. */
     background: hsl(var(--skill-card-hover));
     border: 1px solid hsl(var(--primary) / 0.3);
     box-shadow: var(--shadow-elegant);
+    transform: translateY(-2px);
+  }
+
+  /* Professional theme hover overlay */
+  :root .skill-card:hover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: hsl(var(--professional-hover) / 0.1);
+    border-radius: inherit;
+    pointer-events: none;
   }
 
   /* Animated underline sweep for links */
@@ -224,13 +294,13 @@ All colors MUST be HSL. */
     width: 100%;
     transform: scaleX(0);
     transform-origin: right;
-    background: linear-gradient(90deg, hsl(var(--primary)), transparent);
+    background: linear-gradient(90deg, hsl(var(--accent)), hsl(var(--primary)));
     transition: var(--transition-smooth);
   }
   .story-link:hover::after {
     transform: scaleX(1);
     transform-origin: left;
-    box-shadow: 0 0 8px hsl(var(--primary) / 0.5);
+    box-shadow: 0 0 8px hsl(var(--accent) / 0.5);
   }
 
   /* Subtle hover glow utility */
@@ -238,7 +308,7 @@ All colors MUST be HSL. */
     transition: var(--transition-smooth);
   }
   .hover-glow:hover {
-    box-shadow: var(--shadow-glow-red);
+    box-shadow: var(--shadow-glow);
   }
 
   /* 3D tilt card helpers */
@@ -260,7 +330,7 @@ All colors MUST be HSL. */
   }
 
   /* Section headers - simplified */
-  
+
   /* Design System Utilities - Enhanced */
   .section-container {
     padding-top: var(--section-padding-y);
@@ -269,12 +339,12 @@ All colors MUST be HSL. */
     margin: 0 auto;
     position: relative;
   }
-  
+
   .section-container-lg {
     padding-top: var(--section-padding-y-lg);
     padding-bottom: var(--section-padding-y-lg);
   }
-  
+
   .section-header {
     @apply mb-12 md:mb-16 lg:mb-20;
     text-align: center;
@@ -282,15 +352,15 @@ All colors MUST be HSL. */
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .section-divider {
     height: var(--divider-thickness);
     background: linear-gradient(
-      90deg, 
-      transparent 0%, 
-      hsl(var(--border)) 20%, 
-      hsl(var(--primary) / 0.3) 50%, 
-      hsl(var(--border)) 80%, 
+      90deg,
+      transparent 0%,
+      hsl(var(--border)) 20%,
+      hsl(var(--primary) / 0.3) 50%,
+      hsl(var(--border)) 80%,
       transparent 100%
     );
     margin: var(--divider-margin) auto;
@@ -298,9 +368,9 @@ All colors MUST be HSL. */
     border: none;
     position: relative;
   }
-  
+
   .section-divider::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -311,216 +381,265 @@ All colors MUST be HSL. */
     border-radius: 50%;
     box-shadow: 0 0 0 4px hsl(var(--background)), 0 0 0 6px hsl(var(--border));
   }
-  
+
   .content-grid {
     @apply grid;
     gap: var(--content-gap);
   }
-  
+
   .content-grid-lg {
     gap: var(--content-gap-lg);
   }
-  
+
   .card-grid {
     @apply grid md:grid-cols-2 lg:grid-cols-3;
     gap: var(--card-gap);
   }
-  
+
   .card-grid-2 {
     @apply grid md:grid-cols-2;
     gap: var(--card-gap);
   }
-  
+
   .card-grid-4 {
     @apply grid grid-cols-2 lg:grid-cols-4;
     gap: var(--card-gap);
   }
-  
+
   .card-grid-lg {
     gap: var(--card-gap-lg);
   }
-  
+
   .project-card {
     @apply bg-card border border-border overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-primary/30 hover:-translate-y-1;
     border-radius: var(--card-radius-lg);
     padding: 0;
-    background: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--card) / 0.95) 100%);
-    box-shadow: 
-      0 4px 6px hsl(var(--foreground) / 0.05),
+    background: linear-gradient(
+      145deg,
+      hsl(var(--card)) 0%,
+      hsl(var(--card) / 0.95) 100%
+    );
+    box-shadow: 0 4px 6px hsl(var(--foreground) / 0.05),
       0 1px 3px hsl(var(--foreground) / 0.1);
   }
-  
+
   .project-card:hover {
-    box-shadow: 
-      0 20px 25px hsl(var(--foreground) / 0.1),
+    box-shadow: 0 20px 25px hsl(var(--foreground) / 0.1),
       0 8px 10px hsl(var(--foreground) / 0.06),
       0 0 0 1px hsl(var(--primary) / 0.1);
   }
-  
+
   .stats-grid {
     @apply grid grid-cols-2 lg:grid-cols-4;
     gap: var(--card-gap);
     margin: var(--content-gap) 0;
   }
-  
+
   .stat-card {
     @apply text-center transition-all duration-300 hover:border-primary/30 hover:-translate-y-1;
     padding: var(--card-padding-lg);
-    background: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--card) / 0.95) 100%);
+    background: linear-gradient(
+      145deg,
+      hsl(var(--card)) 0%,
+      hsl(var(--card) / 0.95) 100%
+    );
     border: 1px solid hsl(var(--border));
     border-radius: var(--card-radius);
-    box-shadow: 
-      0 2px 4px hsl(var(--foreground) / 0.05),
+    box-shadow: 0 2px 4px hsl(var(--foreground) / 0.05),
       0 1px 2px hsl(var(--foreground) / 0.1);
   }
-  
+
   .stat-card:hover {
-    box-shadow: 
-      0 8px 12px hsl(var(--foreground) / 0.1),
+    box-shadow: 0 8px 12px hsl(var(--foreground) / 0.1),
       0 4px 6px hsl(var(--foreground) / 0.06);
   }
-  
+
   .achievement-card {
     @apply bg-card border border-border transition-all duration-300 hover:shadow-lg hover:border-primary/20 hover:-translate-y-1;
     padding: var(--card-padding);
     border-radius: var(--card-radius);
-    background: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--card) / 0.98) 100%);
+    background: linear-gradient(
+      145deg,
+      hsl(var(--card)) 0%,
+      hsl(var(--card) / 0.98) 100%
+    );
   }
-  
+
   .info-card {
     @apply bg-card border border-border transition-all duration-300 hover:shadow-md hover:border-primary/20;
     padding: var(--card-padding);
     border-radius: var(--card-radius);
-    background: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--card) / 0.98) 100%);
+    background: linear-gradient(
+      145deg,
+      hsl(var(--card)) 0%,
+      hsl(var(--card) / 0.98) 100%
+    );
   }
-  
+
   .heading-primary {
     font-size: var(--heading-primary);
     @apply font-bold leading-tight;
-    background: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--primary)) 50%, hsl(var(--foreground)) 100%);
+    background: linear-gradient(
+      135deg,
+      hsl(var(--foreground)) 0%,
+      hsl(var(--primary)) 50%,
+      hsl(var(--foreground)) 100%
+    );
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     background-size: 200% auto;
     animation: shimmer 3s ease-in-out infinite;
   }
-  
+
   @keyframes shimmer {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
   }
-  
+
   .heading-secondary {
     font-size: var(--heading-secondary);
     @apply font-bold leading-tight;
-    background: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--primary)) 100%);
+    background: linear-gradient(
+      135deg,
+      hsl(var(--foreground)) 0%,
+      hsl(var(--primary)) 100%
+    );
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
   }
-  
+
   .heading-tertiary {
     font-size: var(--heading-tertiary);
     @apply font-semibold leading-tight;
   }
-  
+
   .text-large {
     font-size: var(--text-large);
     @apply leading-relaxed;
   }
-  
+
   /* Enhanced Visual Separations */
   .visual-separator {
     @apply relative my-16;
   }
-  
+
   .visual-separator::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--primary)),
+      transparent
+    );
     border-radius: 2px;
   }
-  
+
   /* Contextual Statistics Integration */
   .stats-section {
     @apply relative;
-    background: linear-gradient(135deg, hsl(var(--muted) / 0.3) 0%, hsl(var(--muted) / 0.1) 100%);
+    background: linear-gradient(
+      135deg,
+      hsl(var(--muted) / 0.3) 0%,
+      hsl(var(--muted) / 0.1) 100%
+    );
     border: 1px solid hsl(var(--border));
     border-radius: var(--card-radius-lg);
     padding: var(--card-padding-lg);
     margin: var(--content-gap) 0;
   }
-  
+
   .stats-section::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -1px;
     left: -1px;
     right: -1px;
     bottom: -1px;
-    background: linear-gradient(135deg, hsl(var(--primary) / 0.1), transparent, hsl(var(--primary) / 0.1));
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.1),
+      transparent,
+      hsl(var(--primary) / 0.1)
+    );
     border-radius: var(--card-radius-lg);
     z-index: -1;
   }
-  
+
   .stats-highlight {
     @apply text-center py-8;
   }
-  
+
   .stats-highlight h3 {
     @apply font-semibold text-muted-foreground mb-6;
     font-size: var(--text-large);
   }
-  
+
   /* Enhanced Project Cards */
   .project-showcase {
     @apply relative;
   }
-  
+
   .project-showcase::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -20px;
     left: 50%;
     transform: translateX(-50%);
     width: 80px;
     height: 2px;
-    background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--primary)),
+      transparent
+    );
   }
-  
+
   .project-meta {
     @apply flex items-center justify-between text-sm text-muted-foreground mb-3;
   }
-  
+
   .project-tags {
     @apply flex flex-wrap gap-2 mb-4;
   }
-  
+
   .project-actions {
     @apply flex gap-3 mt-6;
   }
-  
+
   /* Consistent Visual Emphasis */
   .emphasis-primary {
     color: hsl(var(--primary));
     font-weight: 600;
   }
-  
+
   .emphasis-accent {
-    background: linear-gradient(135deg, hsl(var(--primary) / 0.1) 0%, hsl(var(--primary) / 0.05) 100%);
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.1) 0%,
+      hsl(var(--primary) / 0.05) 100%
+    );
     padding: 0.25rem 0.5rem;
     border-radius: 0.375rem;
     border: 1px solid hsl(var(--primary) / 0.2);
   }
-  
+
   /* Content Connection Lines */
   .content-flow::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -2rem;
     left: 50%;
@@ -645,6 +764,28 @@ All colors MUST be HSL. */
     z-index: 2;
   }
 
+  /* Professional theme subtle web overlay */
+  :root .web-overlay-professional {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.08;
+    mix-blend-mode: normal;
+    background-image: radial-gradient(
+        circle at 40px 40px,
+        hsl(var(--muted-foreground) / 0.15) 0.5px,
+        transparent 0.5px
+      ),
+      radial-gradient(
+        circle at 0 0,
+        hsl(var(--muted-foreground) / 0.1) 0.5px,
+        transparent 0.5px
+      );
+    background-size: 80px 80px, 80px 80px;
+    animation: webMove 45s linear infinite;
+    z-index: 2;
+  }
+
   .hero-web-reveal {
     animation: webReveal 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
@@ -665,7 +806,7 @@ All colors MUST be HSL. */
 
   /* Button glow helper */
   .btn-glow:hover {
-    box-shadow: var(--shadow-glow-red);
+    box-shadow: var(--shadow-glow);
   }
 
   /* Swing on hover utility for cards */
@@ -693,12 +834,69 @@ All colors MUST be HSL. */
     }
   }
 
+  /* Professional theme animations - clean and minimal */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Professional theme utility classes */
+  .professional-fade-in {
+    animation: var(--animation-fade-in);
+  }
+
+  .professional-slide-up {
+    animation: var(--animation-slide-up);
+  }
+
+  /* Hide Spider-Man specific animations in professional theme */
+  :root .swing-in,
+  :root .gentle-swing,
+  :root .web-fill-animation,
+  :root .hero-web-reveal {
+    animation: none;
+  }
+
+  /* Enable Spider-Man animations only in Spider-Man theme */
+  [data-theme="spiderman"] .swing-in {
+    animation: swingIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  [data-theme="spiderman"] .gentle-swing {
+    animation: gentleSwing 4s ease-in-out infinite;
+  }
+
+  [data-theme="spiderman"] .web-fill-animation {
+    animation: webFill 2s ease-out forwards;
+  }
+
+  [data-theme="spiderman"] .hero-web-reveal {
+    animation: webReveal 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
   /* Accessibility: Reduce motion for users who prefer it */
   @media (prefers-reduced-motion: reduce) {
     .swing-in,
     .gentle-swing,
     .web-fill-animation,
-    .hero-web-reveal {
+    .hero-web-reveal,
+    .professional-fade-in,
+    .professional-slide-up {
       animation: none !important;
     }
 

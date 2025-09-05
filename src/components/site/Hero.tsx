@@ -5,26 +5,43 @@ import { motion } from "framer-motion";
 import reactLogo from "@/assets/icons/react.svg";
 import nodeLogo from "@/assets/icons/node.svg";
 import dockerLogo from "@/assets/icons/docker.svg";
+import { useTheme } from "@/contexts/ThemeContext";
+import { useState } from "react";
 
 export const Hero = () => {
+  const { theme } = useTheme();
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
   const scrollToProjects = () =>
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
 
   return (
     <section id="hero" className="relative overflow-hidden">
-      {/* Spider web background with parallax */}
+      {/* Interactive web background - theme-aware styling */}
       <div className="absolute inset-0" aria-hidden style={{ zIndex: 0 }}>
         <SpiderWebBackground />
-        <div className="web-overlay" />
-        {/* Additional web pattern overlay */}
+        {theme === "spiderman" && <div className="web-overlay" />}
+        {/* Additional web pattern overlay - theme-aware */}
         <div
-          className="absolute inset-0 opacity-[0.12]"
+          className={`absolute inset-0 ${
+            theme === "spiderman" ? "opacity-[0.12]" : "opacity-[0.06]"
+          }`}
           style={{
-            backgroundImage: `
-              radial-gradient(circle at 25% 25%, hsl(var(--primary)) 2px, transparent 2px),
-              radial-gradient(circle at 75% 75%, hsl(var(--primary)) 1px, transparent 1px)
-            `,
-            backgroundSize: "60px 60px, 40px 40px",
+            backgroundImage:
+              theme === "spiderman"
+                ? `
+                radial-gradient(circle at 25% 25%, hsl(var(--primary)) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, hsl(var(--primary)) 1px, transparent 1px)
+              `
+                : `
+                radial-gradient(circle at 25% 25%, hsl(var(--muted-foreground)) 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, hsl(var(--muted-foreground)) 0.5px, transparent 0.5px)
+              `,
+            backgroundSize:
+              theme === "spiderman"
+                ? "60px 60px, 40px 40px"
+                : "80px 80px, 60px 60px",
           }}
         />
       </div>
@@ -35,20 +52,44 @@ export const Hero = () => {
       >
         <div className="mx-auto flex flex-col items-center md:items-start">
           <div className="relative mb-6">
-            <motion.img
-              src={profileImg}
-              alt="Portrait of Mohammed Moid Sufiyan"
-              className="size-36 rounded-full border-2 border-primary object-cover md:size-44"
-              style={{ boxShadow: "var(--shadow-glow-red)" }}
-              initial={{
-                clipPath:
-                  "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
-              }}
-              animate={{
-                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-              }}
-              transition={{ duration: 1.2, delay: 0.8 }}
-            />
+            {/* Loading placeholder */}
+            {!imageLoaded && !imageError && (
+              <div className="size-36 rounded-full border-2 border-primary bg-muted flex items-center justify-center md:size-44 animate-pulse">
+                <span className="text-2xl font-bold text-muted-foreground">
+                  MS
+                </span>
+              </div>
+            )}
+            {/* Fallback placeholder for when image fails to load */}
+            {imageError && (
+              <div className="size-36 rounded-full border-2 border-primary bg-muted flex items-center justify-center md:size-44">
+                <span className="text-2xl font-bold text-muted-foreground">
+                  MS
+                </span>
+              </div>
+            )}
+            {!imageError && (
+              <motion.img
+                src={profileImg}
+                alt="Portrait of Mohammed Moid Sufiyan"
+                className={`size-36 rounded-full border-2 border-primary object-cover md:size-44 bg-muted transition-opacity duration-300 ${
+                  imageLoaded ? "opacity-100" : "opacity-0"
+                }`}
+                style={{ boxShadow: "var(--shadow-glow)" }}
+                onLoad={() => {
+                  setImageLoaded(true);
+                  setImageError(false);
+                }}
+                onError={(e) => {
+                  console.error("Profile image failed to load:", e);
+                  setImageError(true);
+                  setImageLoaded(false);
+                }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              />
+            )}
             <motion.span
               className="absolute -inset-1 -z-10 rounded-full bg-primary/10 blur-2xl"
               initial={{ scale: 0 }}
