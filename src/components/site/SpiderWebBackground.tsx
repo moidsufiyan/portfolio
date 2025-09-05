@@ -53,8 +53,10 @@ export const SpiderWebBackground: React.FC = () => {
       {/* Corner webs with parallax - theme-aware colors */}
       <svg
         ref={webTLRef}
-        className={`absolute -top-24 -left-24 w-[480px] h-[480px] opacity-[0.35] will-change-transform ${
-          theme === "spiderman" ? "text-primary/60" : "text-muted-foreground/30"
+        className={`absolute -top-24 -left-24 w-[480px] h-[480px] will-change-transform ${
+          theme === "spiderman"
+            ? "text-primary opacity-70"
+            : "text-foreground opacity-35"
         }`}
         viewBox="0 0 100 100"
         fill="none"
@@ -80,8 +82,10 @@ export const SpiderWebBackground: React.FC = () => {
 
       <svg
         ref={webBRRef}
-        className={`absolute -bottom-24 -right-24 w-[520px] h-[520px] opacity-[0.35] will-change-transform ${
-          theme === "spiderman" ? "text-primary/60" : "text-muted-foreground/30"
+        className={`absolute -bottom-24 -right-24 w-[520px] h-[520px] will-change-transform ${
+          theme === "spiderman"
+            ? "text-primary opacity-70"
+            : "text-foreground opacity-35"
         }`}
         viewBox="0 0 100 100"
         fill="none"
@@ -115,8 +119,8 @@ export const SpiderWebBackground: React.FC = () => {
             key={i}
             className={`absolute block rounded-full ${
               theme === "spiderman"
-                ? "size-1.5 bg-primary/60"
-                : "size-1 bg-muted-foreground/20"
+                ? "size-1.5 bg-primary/80"
+                : "size-1 bg-foreground/40"
             }`}
             style={{
               top: `${(i * 37) % 100}%`,

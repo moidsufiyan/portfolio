@@ -22,28 +22,19 @@ export const Hero = () => {
       <div className="absolute inset-0" aria-hidden style={{ zIndex: 0 }}>
         <SpiderWebBackground />
         {theme === "spiderman" && <div className="web-overlay" />}
-        {/* Additional web pattern overlay - theme-aware */}
-        <div
-          className={`absolute inset-0 ${
-            theme === "spiderman" ? "opacity-[0.12]" : "opacity-[0.06]"
-          }`}
-          style={{
-            backgroundImage:
-              theme === "spiderman"
-                ? `
+        {/* Additional web pattern overlay - Spider-Man theme only */}
+        {theme === "spiderman" && (
+          <div
+            className="absolute inset-0 opacity-[0.20]"
+            style={{
+              backgroundImage: `
                 radial-gradient(circle at 25% 25%, hsl(var(--primary)) 2px, transparent 2px),
                 radial-gradient(circle at 75% 75%, hsl(var(--primary)) 1px, transparent 1px)
-              `
-                : `
-                radial-gradient(circle at 25% 25%, hsl(var(--muted-foreground)) 1px, transparent 1px),
-                radial-gradient(circle at 75% 75%, hsl(var(--muted-foreground)) 0.5px, transparent 0.5px)
               `,
-            backgroundSize:
-              theme === "spiderman"
-                ? "60px 60px, 40px 40px"
-                : "80px 80px, 60px 60px",
-          }}
-        />
+              backgroundSize: "60px 60px, 40px 40px",
+            }}
+          />
+        )}
       </div>
 
       <div

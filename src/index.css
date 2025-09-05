@@ -747,16 +747,16 @@ All colors MUST be HSL. */
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.25;
+    opacity: 0.35;
     mix-blend-mode: overlay;
     background-image: radial-gradient(
         circle at 30px 30px,
-        hsl(var(--primary) / 0.4) 1px,
+        hsl(var(--primary) / 0.6) 1px,
         transparent 1px
       ),
       radial-gradient(
         circle at 0 0,
-        hsl(var(--primary) / 0.3) 1px,
+        hsl(var(--primary) / 0.5) 1px,
         transparent 1px
       );
     background-size: 60px 60px, 60px 60px;
@@ -769,19 +769,19 @@ All colors MUST be HSL. */
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.08;
+    opacity: 0.15;
     mix-blend-mode: normal;
     background-image: radial-gradient(
         circle at 40px 40px,
-        hsl(var(--muted-foreground) / 0.15) 0.5px,
-        transparent 0.5px
+        hsl(var(--foreground) / 0.25) 1px,
+        transparent 1px
       ),
       radial-gradient(
         circle at 0 0,
-        hsl(var(--muted-foreground) / 0.1) 0.5px,
-        transparent 0.5px
+        hsl(var(--foreground) / 0.2) 0.8px,
+        transparent 0.8px
       );
-    background-size: 80px 80px, 80px 80px;
+    background-size: 70px 70px, 70px 70px;
     animation: webMove 45s linear infinite;
     z-index: 2;
   }
