@@ -6,23 +6,23 @@ const projects = [
   {
     name: "WollyWay",
     description:
-      "Full-stack e-commerce platform for handcrafted products with advanced filtering and secure backend integration",
-    tech: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
-    category: "E-commerce",
+      "Frontend e-commerce demo with product catalog, filtering, and shopping cart built with React",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Context API"],
+    category: "Web App",
   },
   {
     name: "Elevate X",
     description:
-      "Startup mentorship platform connecting entrepreneurs with industry experts for guidance and venture acceleration",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Firebase"],
-    category: "Platform",
+      "Mentorship web app with user authentication and mentor discovery UI built with Next.js",
+    tech: ["Next.js", "TypeScript", "Firebase", "Tailwind CSS"],
+    category: "Web App",
   },
   {
-    name: "Competitive Programming",
+    name: "2D Platformer",
     description:
-      "Active participant in DSA challenges and coding competitions, focusing on algorithmic problem-solving",
-    tech: ["Java", "Python", "C", "Data Structures", "Algorithms"],
-    category: "Programming",
+      "JavaScript game prototype exploring collision detection and character movement",
+    tech: ["JavaScript", "HTML5 Canvas", "Game Physics"],
+    category: "Game Dev",
   },
 ];
 
@@ -31,64 +31,49 @@ export const TechStack = () => {
     <section id="tech-stack" className="section-container">
       <div className="container">
         <div className="section-header">
-          <h2 className="heading-secondary mb-6">Technical Journey</h2>
+          <h2 className="heading-secondary mb-6">Projects & Skills</h2>
           <p className="text-large text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            My technical expertise spans multiple domains, from web development
-            to competitive programming. Here's a comprehensive look at my
-            development journey, achievements, and the technologies I've
-            mastered.
+            Here are the projects I've built and the technologies I've learned
+            through hands-on practice and continuous learning.
           </p>
         </div>
 
-        {/* Contextual Statistics Section */}
+        {/* Simple Highlights */}
         <div className="stats-section">
           <div className="stats-highlight">
-            <h3>Development Achievements</h3>
+            <h3>Learning Highlights</h3>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Over 2 years of dedicated learning and building, these numbers
-              represent my technical growth and real-world impact.
+              Key areas of focus in my development journey
             </p>
           </div>
 
           <div className="stats-grid">
             <div className="stat-card">
               <Code2 className="mx-auto mb-4 size-10 text-primary" />
-              <div className="text-3xl font-bold text-primary mb-2">15+</div>
+              <div className="text-2xl font-bold text-primary mb-2">2+ Years</div>
               <div className="font-semibold text-foreground mb-1">
-                Technologies
-              </div>
-              <div className="text-sm text-muted-foreground">
-                Frontend, Backend, DevOps & Security
+                Learning & Building
               </div>
             </div>
             <div className="stat-card">
               <Trophy className="mx-auto mb-4 size-10 text-primary" />
-              <div className="text-3xl font-bold text-primary mb-2">5+</div>
+              <div className="text-2xl font-bold text-primary mb-2">Live Projects</div>
               <div className="font-semibold text-foreground mb-1">
-                Major Projects
-              </div>
-              <div className="text-sm text-muted-foreground">
-                Live applications with real users
+                Deployed on Vercel
               </div>
             </div>
             <div className="stat-card">
               <Users className="mx-auto mb-4 size-10 text-primary" />
-              <div className="text-3xl font-bold text-primary mb-2">2+</div>
+              <div className="text-2xl font-bold text-primary mb-2">Modern Stack</div>
               <div className="font-semibold text-foreground mb-1">
-                Years Learning
-              </div>
-              <div className="text-sm text-muted-foreground">
-                Continuous skill development
+                React, Node.js, TypeScript
               </div>
             </div>
             <div className="stat-card">
               <Target className="mx-auto mb-4 size-10 text-primary" />
-              <div className="text-3xl font-bold text-primary mb-2">3</div>
+              <div className="text-2xl font-bold text-primary mb-2">Multi-Domain</div>
               <div className="font-semibold text-foreground mb-1">
-                Core Domains
-              </div>
-              <div className="text-sm text-muted-foreground">
-                Web Dev, Security & Game Design
+                Web, Security, Games
               </div>
             </div>
           </div>
@@ -98,11 +83,9 @@ export const TechStack = () => {
 
         <div className="content-grid">
           <div className="section-header">
-            <h3 className="heading-tertiary mb-6">Featured Projects</h3>
+            <h3 className="heading-tertiary mb-6">My Projects</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Each project represents a significant milestone in my technical
-              journey, showcasing different aspects of my skills and
-              problem-solving approach.
+              Projects I've built to learn and practice different technologies
             </p>
           </div>
 
@@ -111,12 +94,6 @@ export const TechStack = () => {
               {projects.map((project, index) => (
                 <Card key={project.name} className="achievement-card group">
                   <CardContent className="pt-6">
-                    <div className="project-meta">
-                      <span className="emphasis-accent">
-                        {project.category}
-                      </span>
-                      <span>Featured</span>
-                    </div>
                     <div className="flex items-start justify-between mb-4">
                       <h4 className="heading-tertiary emphasis-primary">
                         {project.name}

@@ -29,10 +29,10 @@ export const About = () => (
             </p>
 
             <p className="text-muted-foreground">
-              My competitive advantage lies in <span className="text-primary font-medium">multi-domain expertise</span>—from 
-              mastering frameworks like React, Node.js, and TypeScript to practicing ethical hacking with Kali Linux, 
-              Burp Suite, and Wireshark. I'm also building a strong foundation in AI/ML and deep learning while maintaining 
-              a security-first mindset, supported by certifications including AWS Cloud Practitioner and Certified Ethical Hacker (CEH).
+              I'm developing skills across <span className="text-primary font-medium">multiple domains</span>—learning 
+              frameworks like React, Node.js, and TypeScript through projects, exploring cybersecurity concepts 
+              in my coursework, and building a foundation in AI/ML through college classes. I'm currently 
+              pursuing AWS Cloud Practitioner certification to deepen my cloud knowledge.
             </p>
 
             <p className="text-muted-foreground">
@@ -69,8 +69,8 @@ export const About = () => (
               <p className="text-muted-foreground">Cybersecurity & Ethical Hacking</p>
               <p className="text-muted-foreground">AI/ML Applications</p>
               <div className="mt-3 flex flex-wrap justify-center gap-1">
-                <Badge variant="outline" className="text-xs">AWS Certified</Badge>
-                <Badge variant="outline" className="text-xs">CEH</Badge>
+                <Badge variant="outline" className="text-xs">Learning AWS</Badge>
+                <Badge variant="outline" className="text-xs">Student</Badge>
               </div>
             </CardContent>
           </Card>

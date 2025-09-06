@@ -6,30 +6,34 @@ const certifications = [
   {
     title: "AWS Certified Cloud Practitioner",
     issuer: "Amazon Web Services",
+    date: "Target: 2025",
+    status: "Currently Pursuing",
+    description: "Learning AWS cloud fundamentals through hands-on practice and online courses"
+  },
+  {
+    title: "Google Analytics Fundamentals",
+    issuer: "Google",
     date: "2024",
-    status: "Active",
-    description: "Foundational understanding of AWS cloud services and architecture"
+    status: "Completed",
+    description: "Basic understanding of web analytics and tracking"
+  }
+];
+
+const learningPaths = [
+  {
+    title: "React & Modern JavaScript",
+    platform: "Online Courses & Documentation",
+    description: "Self-directed learning through official docs, tutorials, and building projects"
   },
   {
-    title: "Certified Ethical Hacker (CEH)",
-    issuer: "EC-Council",
-    date: "2023",
-    status: "Active", 
-    description: "Advanced penetration testing and ethical hacking methodologies"
+    title: "Cybersecurity Basics",
+    platform: "Academic Coursework & Self-Study",
+    description: "Learning ethical hacking concepts through college courses and online resources"
   },
   {
-    title: "Unity Certified Developer",
-    issuer: "Unity Technologies",
-    date: "2023",
-    status: "Active",
-    description: "Professional game development using Unity engine and C#"
-  },
-  {
-    title: "React Developer Certificate",
-    issuer: "Meta",
-    date: "2022",
-    status: "Active",
-    description: "Advanced React development patterns and best practices"
+    title: "Game Development",
+    platform: "Personal Projects & Tutorials",
+    description: "Exploring game physics and design through JavaScript canvas projects"
   }
 ];
 
@@ -37,19 +41,23 @@ export const Certifications = () => {
   return (
     <section id="certifications" className="py-16 md:py-24 bg-muted/20">
       <div className="container">
-        <SectionHeader>Certifications & Training</SectionHeader>
+        <SectionHeader>Learning & Certifications</SectionHeader>
         <p className="text-center text-foreground/70 mb-12 max-w-2xl mx-auto">
-          Professional certifications that validate my expertise
+          Certifications I'm pursuing and self-directed learning paths
         </p>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <h3 className="font-heading text-xl font-bold text-center mb-6">Certifications</h3>
+        <div className="grid gap-6 md:grid-cols-2 mb-12">
           {certifications.map((cert, index) => (
             <Card key={cert.title} className="surface-card p-6 hover-glow">
               <div className="flex items-start justify-between mb-4">
-                <h3 className="font-heading text-xl font-bold text-foreground">
+                <h3 className="font-heading text-lg font-bold text-foreground">
                   {cert.title}
                 </h3>
-                <Badge variant="secondary" className="ml-2">
+                <Badge 
+                  variant={cert.status === "Completed" ? "default" : "secondary"} 
+                  className="ml-2"
+                >
                   {cert.status}
                 </Badge>
               </div>
@@ -59,7 +67,20 @@ export const Certifications = () => {
                 <p className="text-sm text-foreground/60">{cert.date}</p>
               </div>
               
-              <p className="text-foreground/80">{cert.description}</p>
+              <p className="text-foreground/80 text-sm">{cert.description}</p>
+            </Card>
+          ))}
+        </div>
+
+        <h3 className="font-heading text-xl font-bold text-center mb-6">Self-Directed Learning</h3>
+        <div className="grid gap-6 md:grid-cols-3">
+          {learningPaths.map((path, index) => (
+            <Card key={path.title} className="surface-card p-6">
+              <h4 className="font-semibold text-foreground mb-2">
+                {path.title}
+              </h4>
+              <p className="text-sm text-primary mb-2">{path.platform}</p>
+              <p className="text-foreground/70 text-sm">{path.description}</p>
             </Card>
           ))}
         </div>
