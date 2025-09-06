@@ -22,7 +22,7 @@ export const DevelopmentProcess = () => {
       description:
         "Requirements gathering, user research, and technical architecture planning",
       details: [
-        "Stakeholder interviews and user personas",
+        "Requirements gathering and user research",
         "Technical feasibility analysis",
         "Architecture design and technology selection",
         "Project timeline and milestone planning",
@@ -34,10 +34,10 @@ export const DevelopmentProcess = () => {
       description:
         "Agile development with clean code practices and version control",
       details: [
-        "Test-driven development (TDD)",
+        "Clean code practices and documentation",
         "Git workflow with feature branches",
-        "Code reviews and pair programming",
-        "Continuous integration setup",
+        "Code reviews and iterative development",
+        "Regular testing and debugging",
       ],
     },
     {
@@ -48,8 +48,8 @@ export const DevelopmentProcess = () => {
       details: [
         "Unit and integration testing",
         "Performance testing and optimization",
-        "User acceptance testing (UAT)",
-        "Security vulnerability assessment",
+        "User testing and feedback collection",
+        "Security best practices implementation",
       ],
     },
     {
@@ -57,10 +57,10 @@ export const DevelopmentProcess = () => {
       title: "Deployment",
       description: "Production deployment with monitoring and maintenance",
       details: [
-        "CI/CD pipeline setup",
-        "Production environment configuration",
-        "Performance monitoring implementation",
-        "Documentation and handover",
+        "Production deployment preparation",
+        "Environment configuration and setup",
+        "Basic monitoring and error tracking",
+        "Documentation and project handover",
       ],
     },
   ];
@@ -91,24 +91,24 @@ export const DevelopmentProcess = () => {
 
   const achievements = [
     {
-      metric: "99%",
-      label: "Code Coverage",
-      description: "Comprehensive test coverage across all projects",
+      metric: "Clean",
+      label: "Code Quality",
+      description: "Well-structured, maintainable codebase",
     },
     {
-      metric: "< 2s",
+      metric: "< 3s",
       label: "Load Time",
-      description: "Optimized performance for excellent UX",
+      description: "Optimized performance for good UX",
     },
     {
-      metric: "100%",
-      label: "Accessibility",
-      description: "WCAG 2.1 AA compliance in all projects",
+      metric: "Mobile",
+      label: "Responsive",
+      description: "Cross-device compatibility focus",
     },
     {
-      metric: "Zero",
-      label: "Security Issues",
-      description: "No critical security vulnerabilities",
+      metric: "Secure",
+      label: "Best Practices",
+      description: "Security-conscious development approach",
     },
   ];
 
@@ -116,11 +116,11 @@ export const DevelopmentProcess = () => {
     <section className="section-container bg-muted/20">
       <div className="container">
         <div className="section-header text-center">
-          <h2 className="heading-secondary mb-4">Development Methodology</h2>
+          <h2 className="heading-secondary mb-4">Development Approach</h2>
           <p className="text-muted-foreground max-w-3xl mx-auto">
-            My approach to software development combines industry best practices
-            with modern tooling to deliver high-quality, maintainable, and
-            scalable solutions.
+            My approach to software development focuses on learning and applying
+            best practices, writing clean code, and building projects that solve
+            real problems while continuously improving my skills.
           </p>
         </div>
 
@@ -188,7 +188,7 @@ export const DevelopmentProcess = () => {
         {/* Quality Metrics */}
         <div>
           <h3 className="heading-tertiary text-center mb-8">
-            Quality Metrics & Achievements
+            Development Focus Areas
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {achievements.map((achievement, index) => (
@@ -214,8 +214,8 @@ export const DevelopmentProcess = () => {
               <Users className="mx-auto mb-4 text-primary" size={32} />
               <h4 className="font-semibold mb-2">Team Collaboration</h4>
               <p className="text-sm text-muted-foreground">
-                Experience working in cross-functional teams with designers,
-                product managers, and stakeholders.
+                Experience working in collaborative environments with fellow
+                developers and receiving feedback from users.
               </p>
             </CardContent>
           </Card>
@@ -225,8 +225,8 @@ export const DevelopmentProcess = () => {
               <MessageSquare className="mx-auto mb-4 text-primary" size={32} />
               <h4 className="font-semibold mb-2">Clear Communication</h4>
               <p className="text-sm text-muted-foreground">
-                Regular progress updates, technical documentation, and effective
-                stakeholder communication.
+                Clear project documentation, progress tracking, and effective
+                communication of technical concepts.
               </p>
             </CardContent>
           </Card>

@@ -9,7 +9,16 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Code, Users, Calendar, Zap, Target, TrendingUp } from "lucide-react";
+import {
+  ExternalLink,
+  Github,
+  Code,
+  Users,
+  Calendar,
+  Zap,
+  Target,
+  TrendingUp,
+} from "lucide-react";
 import wollywayImg from "@/assets/project-wollyway.jpeg";
 import elevateXImg from "@/assets/project-elevate-x.png";
 import { GamePreview } from "./GamePreview";
@@ -55,10 +64,20 @@ const projectsData: ProjectData[] = [
     id: "wollyway",
     title: "WollyWay",
     tagline: "E-commerce Revolution for Handcrafted Products",
-    description: "Full-stack e-commerce platform for handcrafted products with advanced filtering and secure backend integration.",
-    longDescription: "WollyWay is a comprehensive e-commerce solution designed specifically for artisans and creators of handcrafted products. The platform addresses the unique challenges faced by small-scale creators in selling their products online, featuring advanced product filtering, secure payment processing, and inventory management.",
+    description:
+      "Full-stack e-commerce platform for handcrafted products with advanced filtering and secure backend integration.",
+    longDescription:
+      "WollyWay is an e-commerce platform I built as a learning project to understand full-stack development. It features product filtering, payment integration with Stripe, and inventory management, demonstrating my skills in React, Node.js, and MongoDB while solving real-world e-commerce challenges.",
     image: wollywayImg,
-    stack: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT", "Stripe API"],
+    stack: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "JWT",
+      "Stripe API",
+    ],
     category: "E-commerce",
     status: "Live",
     timeline: "3 months",
@@ -67,10 +86,8 @@ const projectsData: ProjectData[] = [
       github: "https://github.com/moidsufiyan/wollyway-wonders",
     },
     metrics: {
-      users: "500+ registered users",
       performance: "< 2s load time",
-      codeQuality: "95% test coverage",
-      timeline: "Delivered 2 weeks ahead"
+      timeline: "3 month development",
     },
     technical: {
       architecture: [
@@ -78,42 +95,51 @@ const projectsData: ProjectData[] = [
         "MongoDB with Mongoose ODM",
         "JWT-based authentication",
         "Responsive React frontend",
-        "Stripe payment integration"
+        "Stripe payment integration",
       ],
       challenges: [
         "Complex product filtering system",
         "Secure payment processing",
         "Inventory management",
-        "Image optimization for fast loading"
+        "Image optimization for fast loading",
       ],
       solutions: [
-        "Implemented advanced MongoDB aggregation pipelines",
-        "Used Stripe's secure payment APIs with webhook validation",
-        "Built real-time inventory tracking with Socket.io",
-        "Optimized images with lazy loading and WebP format"
+        "Learned and implemented MongoDB aggregation for filtering",
+        "Integrated Stripe payment API following documentation",
+        "Added real-time features using Socket.io",
+        "Implemented image optimization techniques",
       ],
       learnings: [
         "Advanced database optimization techniques",
         "Payment gateway integration best practices",
         "User experience design for e-commerce",
-        "Performance optimization strategies"
-      ]
+        "Performance optimization strategies",
+      ],
     },
     highlights: [
       "Featured product recommendation engine",
-      "Real-time inventory management", 
+      "Real-time inventory management",
       "Secure payment processing",
-      "Mobile-responsive design"
-    ]
+      "Mobile-responsive design",
+    ],
   },
   {
     id: "elevate-x",
     title: "Elevate X",
     tagline: "Bridging Entrepreneurs with Industry Experts",
-    description: "Startup mentorship platform connecting entrepreneurs with industry experts for guidance and venture acceleration.",
-    longDescription: "Elevate X transforms the traditional mentorship model by creating a structured platform where startup founders can connect with experienced industry professionals, access resources, and accelerate their business growth through AI-powered matching and real-time collaboration tools.",
+    description:
+      "Startup mentorship platform connecting entrepreneurs with industry experts for guidance and venture acceleration.",
+    longDescription:
+      "Elevate X is a mentorship platform I developed to practice building complex applications with user authentication, real-time features, and database relationships. The project helped me learn Next.js, TypeScript, and Firebase while creating a system to connect mentors and mentees.",
     image: elevateXImg,
-    stack: ["Next.js", "TypeScript", "PostgreSQL", "Firebase", "Tailwind CSS", "NextAuth.js"],
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Firebase",
+      "Tailwind CSS",
+      "NextAuth.js",
+    ],
     category: "Platform",
     status: "Live",
     timeline: "4 months",
@@ -122,10 +148,8 @@ const projectsData: ProjectData[] = [
       github: "https://github.com/moidsufiyan/Elevate-X",
     },
     metrics: {
-      users: "200+ entrepreneurs",
-      performance: "99.9% uptime",
       codeQuality: "TypeScript for type safety",
-      timeline: "Launched successfully"
+      timeline: "4 month development",
     },
     technical: {
       architecture: [
@@ -133,40 +157,42 @@ const projectsData: ProjectData[] = [
         "PostgreSQL with Prisma ORM",
         "Firebase for real-time features",
         "NextAuth.js for authentication",
-        "Vercel for deployment"
+        "Vercel for deployment",
       ],
       challenges: [
         "Complex matching algorithm for mentors/mentees",
         "Real-time communication system",
         "Scalable database design",
-        "User onboarding flow optimization"
+        "User onboarding flow optimization",
       ],
       solutions: [
-        "Developed sophisticated matching algorithm based on industry, experience, and goals",
-        "Integrated Firebase for real-time messaging and notifications",
-        "Designed normalized database schema with efficient indexing",
-        "Created multi-step onboarding with progress tracking"
+        "Built a matching system based on user preferences and goals",
+        "Learned Firebase integration for real-time messaging",
+        "Designed database schema with proper relationships",
+        "Created user-friendly onboarding flow",
       ],
       learnings: [
         "Advanced Next.js patterns and optimization",
         "Database design for complex relationships",
         "Real-time system architecture",
-        "User experience research and testing"
-      ]
+        "User experience research and testing",
+      ],
     },
     highlights: [
-      "AI-powered mentor matching",
+      "User preference-based matching",
       "Real-time messaging system",
       "Progress tracking dashboard",
-      "Resource library and tools"
-    ]
+      "Resource library and tools",
+    ],
   },
   {
     id: "platformer-game",
     title: "2D Platformer Game",
     tagline: "Physics-Based Gaming Experience",
-    description: "A fun prototype exploring physics and level design with smooth character controls and engaging gameplay mechanics.",
-    longDescription: "This 2D platformer game showcases custom physics engine implementation, level design principles, and game development fundamentals using vanilla JavaScript and HTML5 Canvas. Features include collision detection, particle systems, and smooth animations.",
+    description:
+      "A fun prototype exploring physics and level design with smooth character controls and engaging gameplay mechanics.",
+    longDescription:
+      "This 2D platformer game showcases custom physics engine implementation, level design principles, and game development fundamentals using vanilla JavaScript and HTML5 Canvas. Features include collision detection, particle systems, and smooth animations.",
     preview: <GamePreview />,
     stack: ["JavaScript", "HTML5 Canvas", "Game Physics", "Animation"],
     category: "Game Development",
@@ -179,41 +205,41 @@ const projectsData: ProjectData[] = [
     metrics: {
       performance: "60 FPS gameplay",
       codeQuality: "Modular architecture",
-      timeline: "Personal project"
+      timeline: "2 month development",
     },
     technical: {
       architecture: [
         "Custom physics engine",
         "Component-based entity system",
         "Canvas rendering pipeline",
-        "Input handling system"
+        "Input handling system",
       ],
       challenges: [
         "Smooth collision detection",
         "Consistent frame rate",
         "Level design tools",
-        "Character animation system"
+        "Character animation system",
       ],
       solutions: [
-        "Implemented AABB collision detection with spatial partitioning",
-        "Used requestAnimationFrame with delta time for smooth animation",
-        "Built level editor with JSON export/import",
-        "Created sprite-based animation system with tweening"
+        "Learned collision detection techniques for game physics",
+        "Used requestAnimationFrame for smooth 60fps animation",
+        "Built a simple level editor with JSON data",
+        "Created sprite animation system for character movement",
       ],
       learnings: [
         "Game physics and mathematics",
         "Performance optimization for games",
         "Animation and visual design",
-        "Game development workflows"
-      ]
+        "Game development workflows",
+      ],
     },
     highlights: [
       "Custom physics engine",
       "Smooth character controls",
       "Multiple game levels",
-      "Particle effects system"
-    ]
-  }
+      "Particle effects system",
+    ],
+  },
 ];
 
 const ProjectCard = ({ project }: { project: ProjectData }) => {
@@ -236,10 +262,14 @@ const ProjectCard = ({ project }: { project: ProjectData }) => {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case "Live": return "bg-green-100 text-green-800 border-green-200";
-      case "In Development": return "bg-blue-100 text-blue-800 border-blue-200";
-      case "Completed": return "bg-purple-100 text-purple-800 border-purple-200";
-      default: return "bg-gray-100 text-gray-800 border-gray-200";
+      case "Live":
+        return "bg-green-100 text-green-800 border-green-200";
+      case "In Development":
+        return "bg-blue-100 text-blue-800 border-blue-200";
+      case "Completed":
+        return "bg-purple-100 text-purple-800 border-purple-200";
+      default:
+        return "bg-gray-100 text-gray-800 border-gray-200";
     }
   };
 
@@ -262,7 +292,11 @@ const ProjectCard = ({ project }: { project: ProjectData }) => {
           />
         )}
         <div className="absolute top-4 right-4">
-          <Badge className={`text-xs font-medium border ${getStatusColor(project.status)}`}>
+          <Badge
+            className={`text-xs font-medium border ${getStatusColor(
+              project.status
+            )}`}
+          >
             {project.status}
           </Badge>
         </div>
@@ -277,7 +311,9 @@ const ProjectCard = ({ project }: { project: ProjectData }) => {
       {/* Project Content */}
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between">
-          <CardTitle className="heading-tertiary text-foreground">{project.title}</CardTitle>
+          <CardTitle className="heading-tertiary text-foreground">
+            {project.title}
+          </CardTitle>
           <Badge variant="outline" className="text-xs ml-2">
             {project.category}
           </Badge>
@@ -294,12 +330,6 @@ const ProjectCard = ({ project }: { project: ProjectData }) => {
         {/* Key Metrics */}
         {project.metrics && (
           <div className="grid grid-cols-2 gap-2 p-3 bg-muted/20 rounded-lg">
-            {project.metrics.users && (
-              <div className="flex items-center gap-2 text-xs">
-                <Users size={12} className="text-primary" />
-                <span>{project.metrics.users}</span>
-              </div>
-            )}
             {project.metrics.performance && (
               <div className="flex items-center gap-2 text-xs">
                 <Zap size={12} className="text-primary" />
@@ -309,7 +339,7 @@ const ProjectCard = ({ project }: { project: ProjectData }) => {
             {project.metrics.timeline && (
               <div className="flex items-center gap-2 text-xs">
                 <Calendar size={12} className="text-primary" />
-                <span>{project.timeline}</span>
+                <span>{project.metrics.timeline}</span>
               </div>
             )}
             {project.metrics.codeQuality && (
@@ -339,7 +369,10 @@ const ProjectCard = ({ project }: { project: ProjectData }) => {
             <h4 className="text-sm font-semibold">Key Features</h4>
             <ul className="space-y-1">
               {project.highlights.map((highlight, index) => (
-                <li key={index} className="text-xs text-muted-foreground flex items-center gap-2">
+                <li
+                  key={index}
+                  className="text-xs text-muted-foreground flex items-center gap-2"
+                >
                   <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                   {highlight}
                 </li>
@@ -348,28 +381,44 @@ const ProjectCard = ({ project }: { project: ProjectData }) => {
 
             {/* Technical Details */}
             <div className="space-y-3">
-              <h4 className="text-sm font-semibold">Technical Implementation</h4>
+              <h4 className="text-sm font-semibold">
+                Technical Implementation
+              </h4>
               <div className="space-y-2">
                 <div>
-                  <h5 className="text-xs font-medium text-muted-foreground mb-1">Architecture</h5>
+                  <h5 className="text-xs font-medium text-muted-foreground mb-1">
+                    Architecture
+                  </h5>
                   <ul className="space-y-1">
-                    {project.technical.architecture.slice(0, 3).map((item, index) => (
-                      <li key={index} className="text-xs text-muted-foreground flex items-center gap-2">
-                        <div className="w-1 h-1 rounded-full bg-muted-foreground" />
-                        {item}
-                      </li>
-                    ))}
+                    {project.technical.architecture
+                      .slice(0, 3)
+                      .map((item, index) => (
+                        <li
+                          key={index}
+                          className="text-xs text-muted-foreground flex items-center gap-2"
+                        >
+                          <div className="w-1 h-1 rounded-full bg-muted-foreground" />
+                          {item}
+                        </li>
+                      ))}
                   </ul>
                 </div>
                 <div>
-                  <h5 className="text-xs font-medium text-muted-foreground mb-1">Key Challenges Solved</h5>
+                  <h5 className="text-xs font-medium text-muted-foreground mb-1">
+                    Key Challenges Solved
+                  </h5>
                   <ul className="space-y-1">
-                    {project.technical.challenges.slice(0, 2).map((challenge, index) => (
-                      <li key={index} className="text-xs text-muted-foreground flex items-center gap-2">
-                        <div className="w-1 h-1 rounded-full bg-muted-foreground" />
-                        {challenge}
-                      </li>
-                    ))}
+                    {project.technical.challenges
+                      .slice(0, 2)
+                      .map((challenge, index) => (
+                        <li
+                          key={index}
+                          className="text-xs text-muted-foreground flex items-center gap-2"
+                        >
+                          <div className="w-1 h-1 rounded-full bg-muted-foreground" />
+                          {challenge}
+                        </li>
+                      ))}
                   </ul>
                 </div>
               </div>
@@ -382,21 +431,31 @@ const ProjectCard = ({ project }: { project: ProjectData }) => {
         {/* Action Buttons */}
         <div className="flex gap-2 w-full">
           {project.links.live && (
-            <a href={project.links.live} target="_blank" rel="noreferrer" className="flex-1">
+            <a
+              href={project.links.live}
+              target="_blank"
+              rel="noreferrer"
+              className="flex-1"
+            >
               <Button variant="outline" className="w-full text-xs" size="sm">
                 <ExternalLink size={14} />
                 Live Demo
               </Button>
             </a>
           )}
-          <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="flex-1">
+          <a
+            href={project.links.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1"
+          >
             <Button className="w-full text-xs" size="sm">
               <Github size={14} />
               Code
             </Button>
           </a>
         </div>
-        
+
         {/* Expand/Collapse Button */}
         <Button
           variant="ghost"
@@ -416,46 +475,67 @@ export const Projects = () => (
   <section id="projects" className="section-container">
     <div className="container">
       <div className="section-header">
-        <h2 className="heading-secondary mb-6">Featured Project Case Studies</h2>
+        <h2 className="heading-secondary mb-6">
+          Featured Project Case Studies
+        </h2>
         <p className="text-large text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-          Comprehensive showcases of my development journey, featuring detailed technical implementations, 
-          challenges overcome, and measurable outcomes. Each project tells a complete story from conception to deployment.
+          A showcase of my development journey through hands-on projects. Each
+          project represents significant learning and growth, demonstrating
+          technical skills, problem-solving approaches, and real-world
+          application of development concepts.
         </p>
       </div>
-      
+
       {/* Project Impact Statistics */}
       <div className="stats-section">
         <div className="stats-highlight">
-          <h3>Project Impact & Reach</h3>
+          <h3>Development Journey</h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Real-world metrics demonstrating the impact and success of my development projects across different domains.
+            Key milestones and technologies that define my growth as a
+            full-stack developer and problem solver.
           </p>
         </div>
-        
+
         <div className="stats-grid">
           <div className="stat-card">
-            <TrendingUp className="mx-auto mb-4 size-10 text-primary" />
-            <div className="text-3xl font-bold text-primary mb-2">700+</div>
-            <div className="font-semibold text-foreground mb-1">Users Reached</div>
-            <div className="text-sm text-muted-foreground">Across all platforms</div>
-          </div>
-          <div className="stat-card">
             <Code className="mx-auto mb-4 size-10 text-primary" />
-            <div className="text-3xl font-bold text-primary mb-2">10K+</div>
-            <div className="font-semibold text-foreground mb-1">Lines of Code</div>
-            <div className="text-sm text-muted-foreground">Clean, maintainable solutions</div>
+            <div className="text-3xl font-bold text-primary mb-2">15+</div>
+            <div className="font-semibold text-foreground mb-1">
+              Technologies
+            </div>
+            <div className="text-sm text-muted-foreground">
+              Frontend, Backend, Security
+            </div>
           </div>
           <div className="stat-card">
             <Github className="mx-auto mb-4 size-10 text-primary" />
             <div className="text-3xl font-bold text-primary mb-2">3</div>
-            <div className="font-semibold text-foreground mb-1">Live Applications</div>
-            <div className="text-sm text-muted-foreground">Production deployments</div>
+            <div className="font-semibold text-foreground mb-1">
+              Live Applications
+            </div>
+            <div className="text-sm text-muted-foreground">
+              Production deployments
+            </div>
+          </div>
+          <div className="stat-card">
+            <TrendingUp className="mx-auto mb-4 size-10 text-primary" />
+            <div className="text-3xl font-bold text-primary mb-2">2+</div>
+            <div className="font-semibold text-foreground mb-1">
+              Years Learning
+            </div>
+            <div className="text-sm text-muted-foreground">
+              Continuous development
+            </div>
           </div>
           <div className="stat-card">
             <Target className="mx-auto mb-4 size-10 text-primary" />
-            <div className="text-3xl font-bold text-primary mb-2">99%</div>
-            <div className="font-semibold text-foreground mb-1">Success Rate</div>
-            <div className="text-sm text-muted-foreground">On-time delivery record</div>
+            <div className="text-3xl font-bold text-primary mb-2">3</div>
+            <div className="font-semibold text-foreground mb-1">
+              Core Domains
+            </div>
+            <div className="text-sm text-muted-foreground">
+              Web, Security, Games
+            </div>
           </div>
         </div>
       </div>
@@ -466,11 +546,12 @@ export const Projects = () => (
         <div className="section-header">
           <h3 className="heading-tertiary mb-6">Detailed Project Portfolio</h3>
           <p className="text-muted-foreground max-w-3xl mx-auto">
-            Explore comprehensive case studies with technical deep-dives, challenges faced, solutions implemented, 
-            and key learnings from each project.
+            Explore comprehensive case studies with technical deep-dives,
+            challenges faced, solutions implemented, and key learnings from each
+            project.
           </p>
         </div>
-        
+
         <div className="card-grid">
           {projectsData.map((project) => (
             <ProjectCard key={project.id} project={project} />
